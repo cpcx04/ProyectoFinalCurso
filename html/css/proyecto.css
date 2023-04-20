@@ -1,0 +1,11 @@
+.banner{
+    background-image: url(../fuente/img/empresa/banner.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.imagenEmpresa{
+    background-position:center;
+}
+.text-white-50{
+    color: rgba(0,0,0) !important
+}
