@@ -1,11 +1,32 @@
-.banner{
+.banner {
     background-image: url(../fuente/img/empresa/banner.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
-.imagenEmpresa{
-    background-position:center;
+
+.imagenEmpresa {
+    background-position: center;
 }
-.text-white-50{
-    color: rgba(0,0,0) !important
+
+.text-white-50 {
+    color: rgba(0, 0, 0) !important
+}
+
+.backgroundNegro {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.textoBanner {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.degradaoGuapo {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 10%, rgba(102, 108, 215, 1) 47%, rgba(210, 210, 210, 1) 100%);
+}
+.fuenteBlanca{
+    color: white !important; 
 }
