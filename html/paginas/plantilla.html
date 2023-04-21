@@ -14,16 +14,16 @@
     <link rel="icon" href="../fuente/img/empresa/logo.jpeg">
     <link rel="stylesheet" href="../css/proyecto.css">
     <script src="../scrip/proyecto.js"></script>
-    
+
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top degradaoGuapo ">
+    <header style="overflow:hidden !important; display: block;" id="menu">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top degradaoGuapo">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <a href="" title="Pagina Principal"><img src="../fuente/img/empresa/logo.jpeg" alt="Logo"
-                            class="img-fluid imagenEmpresa rounded-circle" style="max-width: 60px;"></a>
+                            class="img-fluid imagenEmpresa rounded-circle" style="max-width: 60px"></a>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -58,15 +58,20 @@
                 </div>
             </div>
         </nav>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16" id="flecha">
-            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-          </svg>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon bk-black"></span>
         </button>
     </header>
+    <button id="cerrarMenu" class="navbar-toggler" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+            class="bi bi-arrow-down container" style="margin-top: 60px; transform: rotate(3.142rad);"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+        </svg>
+    </button>
     <main class="container" style="margin-top: 80px;">
-        
+
         <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
             <div class="col-md-6 px-0">
                 <h1 class="display-4 fst-italic">CEI PETITS 2 </h1>
@@ -125,12 +130,15 @@
         <div class="row">
             <div class="col-md-8">
                 <h3 class="pb-4 mb-4 fst-italic border-bottom">
-                    Firehose 
+                    Firehose
                 </h3>
 
                 <article class="blog-post">
                     <h2 class="blog-post-title"></h2>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d792.4196669576511!2d-5.9997781!3d37.3974308!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c092550322f%3A0x17c25f2c1203579e!2sCEI%20Petits%202!5e0!3m2!1ses!2ses!4v1682066399514!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d792.4196669576511!2d-5.9997781!3d37.3974308!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c092550322f%3A0x17c25f2c1203579e!2sCEI%20Petits%202!5e0!3m2!1ses!2ses!4v1682066399514!5m2!1ses!2ses"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </article>
 
                 <article class="blog-post">
