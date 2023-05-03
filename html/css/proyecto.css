@@ -41,6 +41,9 @@
     background: rgb(12, 64, 231);
     background: linear-gradient(90deg, rgba(12, 64, 231, 1) 0%, rgba(8, 24, 224, 1) 49%, rgba(253, 254, 254, 1) 100%);
 }
-.desaparecer{
-    transition: 3s ease-in-out;
+svg{
+    transition: transform 0.2s ease-in-out;
+}
+svg.rotate{
+    transform: rotate(180deg);
 }

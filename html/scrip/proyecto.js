@@ -8,3 +8,8 @@ function ocultarImg() {
     } else
         div.hidden = true;
 }
+
+var myObject = document.querySelector('svg');
+myObject.addEventListener('click', function() {
+  myObject.classList.toggle('rotate');
+});
