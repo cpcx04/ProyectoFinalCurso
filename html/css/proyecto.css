@@ -41,9 +41,43 @@
     background: rgb(12, 64, 231);
     background: linear-gradient(90deg, rgba(12, 64, 231, 1) 0%, rgba(8, 24, 224, 1) 49%, rgba(253, 254, 254, 1) 100%);
 }
-svg{
+
+svg {
     transition: transform 0.2s ease-in-out;
 }
-svg.rotate{
+
+svg.rotate {
     transform: rotate(180deg);
+}
+
+/*Logeo*/
+body {
+    position: relative;
+    margin: 0;
+}
+
+.sect {
+    width: 100%;
+    min-height: 500px;
+}
+
+#sect1,
+#sect3 {
+    background-color: #3333337d;
+    color: #fff;
+}
+
+#sect2 {
+    background-color: #dddddd7d;
+    color: #333;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 105%;
+    min-height: 100%;
+    transform: translateX(calc((100% - 100vw) / 2));
+    z-index: -2;
 }
