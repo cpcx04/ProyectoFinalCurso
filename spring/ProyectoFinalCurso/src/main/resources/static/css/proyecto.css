@@ -1,0 +1,83 @@
+.banner {
+    background-image: url(../fuente/img/empresa/banner.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.imagenEmpresa {
+    background-position: center;
+}
+
+.text-white-50 {
+    color: rgba(0, 0, 0) !important
+}
+
+.backgroundNegro {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.textoBanner {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.degradaoGuapo {
+    background: rgb(209, 107, 193);
+    background: linear-gradient(90deg, rgba(209, 107, 193, 1) 0%, rgba(121, 9, 79, 1) 64%, rgba(253, 254, 254, 1) 100%);
+}
+
+.fuenteBlanca {
+    color: white !important;
+}
+
+.degradadopetits {
+    background: rgb(209, 107, 193);
+    background: linear-gradient(90deg, rgba(209, 107, 193, 1) 0%, rgba(121, 9, 79, 1) 64%, rgba(253, 254, 254, 1) 100%);
+}
+
+.degradadoPagina {
+    background: rgb(12, 64, 231);
+    background: linear-gradient(90deg, rgba(12, 64, 231, 1) 0%, rgba(8, 24, 224, 1) 49%, rgba(253, 254, 254, 1) 100%);
+}
+
+svg {
+    transition: transform 0.2s ease-in-out;
+}
+
+svg.rotate {
+    transform: rotate(180deg);
+}
+
+/*Logeo*/
+body {
+    position: relative;
+    margin: 0;
+}
+
+.sect {
+    width: 100%;
+    min-height: 500px;
+}
+
+#sect1,
+#sect3 {
+    background-color: #3333337d;
+    color: #fff;
+}
+
+#sect2 {
+    background-color: #dddddd7d;
+    color: #333;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 105%;
+    min-height: 100%;
+    transform: translateX(calc((100% - 100vw) / 2));
+    z-index: -2;
+}
