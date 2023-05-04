@@ -9,5 +9,5 @@
     <main th:replace="~{fragmentos/main::main}"></main>
     <footer th:replace="~{fragmentos/footer::footer}"></footer>
 	<th:block th:replace=~{fragmentos/jsfinal::javascriptfinal}></th:block>
-    <script src="../static/scrip/proyecto.js"></script>
+    <script th:src="@{/scrip/proyecto.js}"></script>
 </body>
