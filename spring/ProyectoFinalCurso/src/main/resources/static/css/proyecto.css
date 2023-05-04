@@ -61,8 +61,7 @@ body {
     min-height: 500px;
 }
 
-#sect1,
-#sect3 {
+#sect1{
     background-color: #3333337d;
     color: #fff;
 }
@@ -72,7 +71,7 @@ body {
     color: #333;
 }
 
-video {
+.video1{
     position: fixed;
     right: 0;
     bottom: 0;
