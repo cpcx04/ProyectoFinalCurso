@@ -10,4 +10,12 @@ public class MainController {
 	public String index() {
 		return "index";//Mostramos el index
 	}
+	
+	@GetMapping("/login")
+	public String iniciarSesion() {
+		return "login";
+	}
+	
+	
+	
 }
