@@ -16,6 +16,10 @@ public class MainController {
 		return "login";
 	}
 	
+	@GetMapping("/calendar")
+	public String calendario() {
+		return "calendario";
+	}
 	
 	
 }
