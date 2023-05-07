@@ -13,7 +13,3 @@ var myObject = document.querySelector('svg');
 myObject.addEventListener('click', function () {
   myObject.classList.toggle('rotate');
 });
-
-$(window).load(function () {
-  $(".loader").fadeOut("slow");
-});
