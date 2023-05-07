@@ -54,8 +54,6 @@ svg.rotate {
 body {
     position: relative;
     margin: 0;
-    margin: 0;
-    overflow-Y: hidden;
 }
 
 .sect {
