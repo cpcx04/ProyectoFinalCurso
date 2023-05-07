@@ -167,3 +167,16 @@ body {
     height: 100%;
     object-fit: cover;
 }
+/*sobreNosotrospage*/
+.fonditoPng{
+    background-size: cover;
+    min-height: 800px;
+    margin: 0 0 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textoAboutUs{
+    max-width: 400px;
+}

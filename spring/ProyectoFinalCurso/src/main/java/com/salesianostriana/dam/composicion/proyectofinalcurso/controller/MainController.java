@@ -20,6 +20,11 @@ public class MainController {
 	public String calendario() {
 		return "calendario";
 	}
+
+	@GetMapping("/sobrenosotros")
+	public String aboutUs(){
+		return"sobrenosotros";
+	}
 	
 	
 }
