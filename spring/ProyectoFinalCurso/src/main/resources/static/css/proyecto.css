@@ -167,8 +167,9 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
 /*sobreNosotrospage*/
-.fonditoPng{
+.fonditoPng {
     background-size: cover;
     min-height: 800px;
     margin: 0 0 20px;
@@ -177,6 +178,22 @@ body {
     align-items: center;
     justify-content: center;
 }
-.textoAboutUs{
+
+.textoAboutUs {
     max-width: 400px;
+}
+
+/*Cargador*/
+.cargador {
+    position: fixed;
+    z-index: 9999;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    background-image: url(../img/giphy.gif);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    opacity: 1;
 }
