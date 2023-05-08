@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "ProyectoFinalCursoApplication",
+            "request": "launch",
+            "mainClass": "com.salesianostriana.dam.composicion.proyectofinalcurso.ProyectoFinalCursoApplication",
+            "projectName": "proyectofinalcurso"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
