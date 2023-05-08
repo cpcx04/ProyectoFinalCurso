@@ -15,8 +15,9 @@ myObject.addEventListener('click', function () {
 });
 /*Cargado de Pagina*/
 //funcion para quitar el preoloader
+/*
 function quitarPreloader() {
   const preloader = document.querySelector('.onload');
   preloader.style.opacity = 0;
   preloader.style.visibility = 'hidden';
-}
+}*/
