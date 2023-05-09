@@ -16,7 +16,8 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Menu {
 	
-	@Id@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id_dieta;
 	
 	private String platoPrincipal;
