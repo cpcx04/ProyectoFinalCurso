@@ -18,18 +18,15 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Descripcion</th>
-                                <th>Precio</th>
+                                <th>Primer Plato</th>
+                                <th>Segundo Plato</th>
                                 <th>Imagen</th>
-                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr th:each="menu:${menus}">
-                                <td th:text="${menu.nombre}"></td>
-                                <td th:text="${menu.descripcion}"></td>
-                                <td th:text="${menu.precio}"></td>
+                                <td th:text="${menu.platoPrincipal}"></td>
+                                <td th:text="${menu.segundoPlato}"></td>
                                 <td><img th:src="@{${menu.imagen}}" width="100px" height="100px" /></td>
                                 <td>
                                     <a th:href="@{/menu/editar/{id}(id=${menu.id})}" class="btn btn-warning">Editar</a>

@@ -526,4 +526,3 @@ insert into Familia (id_alumno, tutorLegal, madre, padre, hermanos) values (100,
 
 ALTER SEQUENCE hibernate_sequence RESTART WITH 1000;
 
-

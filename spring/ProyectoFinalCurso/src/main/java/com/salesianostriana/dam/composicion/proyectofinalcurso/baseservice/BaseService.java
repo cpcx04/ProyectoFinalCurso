@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.baseservice;
 
-public class BaseService {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+public class BaseService <T,ID,R extends JpaRepository<T,ID>> implements BaseService{
+	
 }
