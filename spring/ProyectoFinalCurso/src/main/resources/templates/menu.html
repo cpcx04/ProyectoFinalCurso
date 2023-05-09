@@ -29,8 +29,8 @@
                                 <td th:text="${menu.segundoPlato}"></td>
                                 <td><img th:src="@{${menu.imagen}}" width="100px" height="100px" /></td>
                                 <td>
-                                    <a th:href="@{/menu/editar/{id}(id=${menu.id})}" class="btn btn-warning">Editar</a>
-                                    <a th:href="@{/menu/eliminar/{id}(id=${menu.id})}" class="btn btn-danger">Eliminar</a>
+                                    <a th:href="@{/menu/editar/{id}(id=${menu.id_dieta})}" class="btn btn-warning">Editar</a>
+                                    <a th:href="@{/menu/eliminar/{id}(id=${menu.id_dieta})}" class="btn btn-danger">Eliminar</a>
                                 </td>
                             </tr>
                         </tbody>
