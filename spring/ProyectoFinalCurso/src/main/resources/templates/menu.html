@@ -24,15 +24,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="menu:${menus}">
+                             <tr th:each=" menu : ${comidas}">
                                 <td th:text="${menu.platoPrincipal}"></td>
                                 <td th:text="${menu.segundoPlato}"></td>
-                                <td><img th:src="@{${menu.imagen}}" width="100px" height="100px" /></td>
-                                <td>
-                                    <a th:href="@{/menu/editar/{id}(id=${menu.id_dieta})}" class="btn btn-warning">Editar</a>
-                                    <a th:href="@{/menu/eliminar/{id}(id=${menu.id_dieta})}" class="btn btn-danger">Eliminar</a>
-                                </td>
-                            </tr>
+                                <td><a th:href="@{/menu/editar/{id}(id=${menu.id})}" class="btn btn-warning">Editar</a></td>
+                                <td><a th:href="@{/menu/eliminar/{id}(id=${menu.id})}" class="btn btn-danger">Eliminar</a></td>
+                            </tr>    
                         </tbody>
                     </table>
                     <a th:href="@{/menu/crear}" class="btn btn-primary">Crear</a>
