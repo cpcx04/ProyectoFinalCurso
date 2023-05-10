@@ -15,7 +15,8 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Menu {
 	
-	@Id@GeneratedValue
+	@Id
+	@GeneratedValue
 	private Long id_dieta;
 	
 	private String platoPrincipal;
