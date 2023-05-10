@@ -16,19 +16,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
+@Table(name="menu")
 public class Menu {
-	
-<<<<<<< HEAD
-	@Id
-	@GeneratedValue
-=======
 
 	@Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
->>>>>>> uH08-CrearEditarMenu
+	@Column(name="ID")
 	private Long id_dieta;
-	
+	@Column(name="PLATOPRINCIPAL")
 	private String platoPrincipal;
+	@Column(name="SEGUNDOPLATO")
 	private String segundoPlato;
 
 }

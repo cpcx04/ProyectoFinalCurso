@@ -11,7 +11,7 @@ import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Menu;
 public interface MenuRepository extends JpaRepository<Menu,Long	> {
 
 		@Query("select m from Menu m where m.platoPrincipal != false")
-		public List<Menu> findComidas();
+		public List<Menu> findMenu();
 	
 	
 }

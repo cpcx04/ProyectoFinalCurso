@@ -18,8 +18,8 @@ public class MenuService{
 		return comidas.findAll();
 	}
 	
-	public List<Menu> findComidas(){
-		return comidas.findComidas();
+	public List<Menu> findMenu(){
+		return comidas.findMenu();
 	}
 	
 	public Menu save(Menu comida) {
