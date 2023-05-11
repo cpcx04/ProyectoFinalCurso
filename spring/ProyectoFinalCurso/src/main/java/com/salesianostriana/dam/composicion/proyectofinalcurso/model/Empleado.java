@@ -1,6 +1,5 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.model;
 
-import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,11 +22,11 @@ public class Empleado {
 	
 	private String nombre,apellidos,dni;
 	
-	private double sueldo;
+	private String sueldo;
 	
 	private String mail;
 
-	private LocalDate fechaContratacion;
+	private String fechaContratacion;
 	
 	private String fechaDespido;
 	

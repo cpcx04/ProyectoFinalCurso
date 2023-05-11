@@ -17,10 +17,7 @@ public class EmpleadoService {
 	public List<Empleado> findAll(){
 		return trabajador.findAll();
 	}
-	
-	public List<Empleado> findEmpleado(){
-		return trabajador.findTrabajador();
-	}
+
 	
 	public Empleado save(Empleado employee) {
 		return trabajador.save(employee);

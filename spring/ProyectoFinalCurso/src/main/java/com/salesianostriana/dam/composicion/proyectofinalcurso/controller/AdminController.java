@@ -7,22 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.salesianostriana.dam.composicion.proyectofinalcurso.service.EmpleadoService;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.MenuService;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 	
-	@Autowired
-	private MenuService menuService;
-
+	@Autowired 
+	private EmpleadoService employeeService;
 	@GetMapping("/")
-	public String admin() {
+	public String admin(@RequestParam(name="id_trabajador",required=false)Long id,Model model) {
+		model.addAttribute("trabajador",employeeService.findAll());
 		return "admin";
 	}
-	@GetMapping("/menu")
-	public String menu(@RequestParam(name = "ID", required = false) Long id, Model model) {
-		model.addAttribute("comidas", menuService.findAll());
-		return "menu";
-	}
+	
 }
