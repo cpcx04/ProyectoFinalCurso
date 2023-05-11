@@ -20,7 +20,7 @@ public class SecurityConfig {
 
 	private final UserDetailsService userDetailsService;
 	private final PasswordEncoder passwordEncoder;
-	
+
 	@Bean
 	public DaoAuthenticationProvider daoAuthenticationProvider() {
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
@@ -28,44 +28,36 @@ public class SecurityConfig {
 		provider.setPasswordEncoder(passwordEncoder);
 		return provider;
 	}
-	
-	@Bean
-	public AuthenticationManager 
-			authenticationManager(HttpSecurity http) throws Exception {
-		
-		AuthenticationManagerBuilder authBuilder =
-				http.getSharedObject(AuthenticationManagerBuilder.class);
-		
-		return authBuilder
-			.authenticationProvider(daoAuthenticationProvider())
-			.build();
-		
-		
-	}
-	
-	
-	
-	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-		http
-			.csrf()
-			.disable()
-			.authorizeHttpRequests()
-			.requestMatchers("/h2-console/**", "/css/**", "/js/**", "/img/**").permitAll()
-			.requestMatchers("/admin/**").hasRole("ADMIN")
-			.anyRequest().authenticated()
-			.and()
-		.formLogin()
-			.loginPage("/login")
-			.permitAll();
-		
 
-		// Añadimos esto para poder seguir accediendo a la consola de H2
-		// con Spring Security habilitado.
+	@Bean
+	public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
+
+		AuthenticationManagerBuilder authBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
+
+		return authBuilder.authenticationProvider(daoAuthenticationProvider()).build();
+
+	}
+
+	@Bean
+
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+		http
+				.authorizeHttpRequests()
+				.requestMatchers("/css/**", "/js/**", "/h2-console/**").permitAll()
+				.requestMatchers("/admin/**").hasRole("ADMIN")
+				.anyRequest().authenticated()
+				.and()
+				.formLogin()
+				.loginPage("/login")
+				.permitAll();
+
 		http.csrf().disable();
+
 		http.headers().frameOptions().disable();
-		
+
 		return http.build();
+
 	}
 
 }
