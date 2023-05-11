@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head th:replace="~{/fragmentos/head::head}">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/proyecto.css}">
+
 <body>
-	
+    <div th:replace="~{/fragmentos/preloader::preloader}"></div>
+	<nav th:replace="~{/fragmentos/encabezado::encabezado}"></nav>
+	<main>
+		
+	</main>
+	<footer th:replace="~{/fragmentos/footer::footer}"></footer>
+	<th:block th:replace=~{/fragmentos/jsfinal::javascriptfinal}></th:block>
+	<script th:src="@{/scrip/proyecto.js}"></script>
 </body>
-</html>

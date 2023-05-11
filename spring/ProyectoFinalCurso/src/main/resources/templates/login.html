@@ -64,8 +64,8 @@
                                     </div>
 
                                     <!-- Submit button -->
-										<button type="submit" class="btn btn-primary btn-block mb-4">
-                                        <input type="submit" name="enviar" value="Entrar" class="nav-link fuenteBlanca" th:href="@{/}"/>
+										<button type="submit" class="btn btn-primary btn-block mb-4" th:action="@{/inicio}" th:object="${usuario}" method="post">
+                                        <input type="submit" name="enviar" value="Entrar" class="nav-link fuenteBlanca"/>	
                                     	</button>
                                 </form>
                             </div>
