@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/*@Entity
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,4 +23,4 @@ public class Empleado {
 	
 	
 
-}*/
+}
