@@ -24,7 +24,7 @@ public class EmpleadoController {
     		employeeService.delete(empleado);
     	}
     	
-        return"redirect:admin";
+        return"redirect:/admin";
     }
     
     @GetMapping("/edit/{id_empleado}")

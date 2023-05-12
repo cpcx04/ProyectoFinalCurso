@@ -7,21 +7,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @Entity
+@NoArgsConstructor
+@Table(name="PROFESOR")
 
-@Table(name="DIRECTORA")
-public class Directora extends Empleado{
-
-	@Column(name="PLUSSUELDO")
-	private String plusSueldo;
+public class Profesor extends Empleado{
 	
-	@Column(name="HORARIOCONSULTA")
-	private String horarioConsulta;
+	@Column(name="ENPRACTICAS")
+	private boolean enPracticas;
+	
+	@Column(name="TITULO")
+	private String titulo;
 
-	public Directora(Long id_empleado, String nombre, String apellidos, String dni, String sueldo, String mail,
+	public Profesor(Long id_empleado, String nombre, String apellidos, String dni, String sueldo, String mail,
 			String fechaContratacion, String fechaDespido) {
 		super(id_empleado, nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+
 }
