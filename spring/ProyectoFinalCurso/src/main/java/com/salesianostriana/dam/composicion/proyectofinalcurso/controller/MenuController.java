@@ -15,7 +15,7 @@ public class MenuController {
 	@Autowired
 	private MenuService menuService;
 	
-	@GetMapping("/")
+	@GetMapping("")
 	public String menu(@RequestParam(name = "ID", required = false) Long id, Model model) {
 		model.addAttribute("comidas", menuService.findAll());
 		return "menu";
