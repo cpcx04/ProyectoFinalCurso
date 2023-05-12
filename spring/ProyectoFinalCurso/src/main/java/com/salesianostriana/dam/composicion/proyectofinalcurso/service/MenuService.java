@@ -17,11 +17,6 @@ public class MenuService{
 	public List<Menu> findAll(){
 		return comidas.findAll();
 	}
-	
-	public List<Menu> findMenu(){
-		return comidas.findMenu();
-	}
-	
 	public Menu save(Menu comida) {
 		return comidas.save(comida);
 	}

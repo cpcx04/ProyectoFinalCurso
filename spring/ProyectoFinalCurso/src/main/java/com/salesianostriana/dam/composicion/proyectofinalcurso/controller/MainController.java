@@ -10,8 +10,6 @@ import com.salesianostriana.dam.composicion.proyectofinalcurso.service.MenuServi
 
 @Controller
 public class MainController {
-	@Autowired
-	private MenuService menuService;
 	
 	@GetMapping("/")
 	public String index() {
@@ -32,11 +30,5 @@ public class MainController {
 	public String aboutUs() {
 		return "sobrenosotros";
 	}
-
-	@GetMapping("/menu")
-	public String menu(@RequestParam(name="ID",required=false)Long id,Model model) {
-		model.addAttribute("comidas", menuService.findAll());
-		return "menu";
-		}
 
 }

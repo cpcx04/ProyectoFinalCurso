@@ -6,16 +6,11 @@
 
 <body>
     <header style="display: block;" th:fragment="encabezado" class="fixed-top">
-		<!--
-        <div class="ov-preloader">
-            <div class="ov-icon"></div>
-        </div>
-        -->
         <nav class="navbar navbar-expand-sm bg-primary navbar-dark  degradaoGuapo desaparecer" id="menu">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <a href="" title="Pagina Principal"><img src="../../img/logo.jpeg" alt="Logo"
-                            class="img-fluid imagenEmpresa rounded-circle" style="max-width: 60px"></a>
+                   <img src="../../img/logo.jpeg" alt="Logo"
+                            class="img-fluid imagenEmpresa rounded-circle" style="max-width: 60px">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -29,9 +24,6 @@
                             <a class="nav-link fuenteBlanca" th:href="@{/sobrenosotros}">Sobre nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fuenteBlanca" th:href="@{/login}">Login</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link fuenteBlanca" th:href="@{/login}">Sing out</a>
                         </li>
                         <li class="nav-item dropdown">
@@ -41,6 +33,9 @@
                                 <li><a class="dropdown-item text-dark" th:href="@{/menu}">Menú</a></li>
                                 <li><a class="dropdown-item text-dark" th:href="@{/calendar}">Calendario</a></li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fuenteBlanca" th:href="@{/admin}" sec:authorize="hasRole('ROLE_ADMIN')">Trabajadores</a>
                         </li>
 
                     </ul>

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.MenuService;
 
@@ -14,9 +15,9 @@ public class MenuController {
 	@Autowired
 	private MenuService menuService;
 	
-	@GetMapping("/")
-	public String index(Model model) {
-		model.addAttribute("comidas",menuService.findAll());
-		return "/menu";
+	@GetMapping("")
+	public String menu(@RequestParam(name = "ID", required = false) Long id, Model model) {
+		model.addAttribute("comidas", menuService.findAll());
+		return "menu";
 	}
 }
