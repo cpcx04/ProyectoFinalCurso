@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.EmpleadoService;
-import com.salesianostriana.dam.composicion.proyectofinalcurso.service.MenuService;
 
 @Controller
 @RequestMapping("/admin")
@@ -16,10 +15,10 @@ public class AdminController {
 	
 	@Autowired 
 	private EmpleadoService employeeService;
-	@GetMapping("/")
-	public String admin(@RequestParam(name="id_trabajador",required=false)Long id,Model model) {
+
+	@GetMapping("")
+	public String admin(@RequestParam(name="id_empleado",required=false)Long id,Model model) {
 		model.addAttribute("trabajador",employeeService.findAll());
 		return "admin";
-	}
-	
+	}	
 }

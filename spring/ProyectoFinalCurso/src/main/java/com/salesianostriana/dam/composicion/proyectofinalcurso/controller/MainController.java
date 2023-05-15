@@ -11,9 +11,6 @@ import com.salesianostriana.dam.composicion.proyectofinalcurso.service.MenuServi
 @Controller
 public class MainController {
 	
-	@Autowired
-	private MenuService menuService;
-
 	@GetMapping("/")
 	public String index() {
 		return "index";// Mostramos el index
@@ -32,11 +29,6 @@ public class MainController {
 	@GetMapping("/sobrenosotros")
 	public String aboutUs() {
 		return "sobrenosotros";
-	}
-
-	@GetMapping("/menu")
-	public String menu(){
-		return "menu";
 	}
 
 }

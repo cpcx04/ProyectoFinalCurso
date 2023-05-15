@@ -32,7 +32,7 @@
                         </thead>
                         <tbody>
                              <tr th:each=" empleado : ${trabajador}">
-								 <td th:text="${empleado.id_empleado}"></td>
+								<td th:text="${empleado.id_empleado}"></td>
                                 <td th:text="${empleado.nombre}"></td>
                                 <td th:text="${empleado.apellidos}"></td>
                                 <td th:text="${empleado.dni}"></td>
@@ -40,6 +40,11 @@
                                 <td th:text="${empleado.mail}"></td>
                                 <td th:text="${empleado.fechaContratacion}"></td>
                                 <td th:text="${empleado.fechaDespido}"></td>
+                                
+                            	<td>
+                                	<a th:href="@{/admin/empleados/edit/{id_empleado}(id_empleado=${empleado.id_empleado})}" class="btn btn-warning">Editar</a>
+                                	<a th:href="@{/admin/empleados/delete/{id_empleado}(id_empleado=${empleado.id_empleado})}" class="btn btn-danger">Borrar</a>
+                            	</td>
                             </tr>    
                         </tbody>
                     </table>
