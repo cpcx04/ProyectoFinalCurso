@@ -32,9 +32,9 @@ public class EmpleadoController {
     	Empleado employee= employeeService.findById(id);
     	if(employee != null) {
     		model.addAttribute("trabajador",employee);
-    		return "admin";
+    		return "admin/empleados/formEditarEmpleado";
     	}else {
-    		return "redirect:admin";
+    		return "redirect:/admin/empleados";
     	}
     }
     
