@@ -22,7 +22,7 @@ public class Empleado {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="ID")
+	@Column(name="ID_EMPLEADO")
 	private Long id_empleado;
 	
 	private String nombre,apellidos,dni;
