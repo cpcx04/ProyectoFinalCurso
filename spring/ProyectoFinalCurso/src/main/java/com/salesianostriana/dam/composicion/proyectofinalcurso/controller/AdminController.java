@@ -21,4 +21,5 @@ public class AdminController {
 		model.addAttribute("trabajador",employeeService.findAll());
 		return "admin";
 	}
+	
 }

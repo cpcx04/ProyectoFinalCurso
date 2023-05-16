@@ -1,4 +1,5 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,31 +14,41 @@ import com.salesianostriana.dam.composicion.proyectofinalcurso.service.EmpleadoS
 @RequestMapping("/admin/empleados")
 public class EmpleadoController {
 
-    @Autowired
-    private EmpleadoService employeeService;
+	@Autowired
+	private EmpleadoService employeeService;
 
-    @GetMapping("/delete/{id_empleado}")
-    public String delete(@PathVariable("id_empleado")Long id,Model model){
-    	Empleado empleado= employeeService.findById(id);
-    	
-    	if(empleado !=null) {
-    		employeeService.delete(empleado);
-    	}
-    	
-        return"redirect:/admin";
-    }
-    
-    @GetMapping("/edit/{id_empleado}")
-    public String editarProducto(@PathVariable("id_empleado")Long id, Model model) {
-    	Empleado employee= employeeService.findById(id);
-    	if(employee != null) {
-    		model.addAttribute("trabajador",employee);
-    		return "admin/empleados/formEditarEmpleado";
-    	}else {
-    		return "redirect:/admin/empleados";
-    	}
-    }
-    
-    
+	@GetMapping("/delete/{id_empleado}")
+	public String delete(@PathVariable("id_empleado") Long id, Model model) {
+		Empleado empleado = employeeService.findById(id);
+
+		if (empleado != null) {
+			employeeService.delete(empleado);
+		}
+
+		return "redirect:/admin";
+	}
+
+	
+	@GetMapping("/edit/{id_empleado}")
+	public String editarProducto(@PathVariable("id_empleado") Long id, Model model) {
+
+		Empleado employee = employeeService.findById(id);
+
+		if (employee != null) {
+
+			model.addAttribute("empleado", employee);
+
+			return "redirect:/admin/empleados/edit/{id_empleado}/nuevo";
+		} else {
+
+			return "redirect:/admin";
+		}
+	}
+	
+	@GetMapping("/edit/{id_empleado}/nuevo")
+	public String nuevo(Model model) {
+		model.addAttribute("categoria", new Empleado());
+		return "newWorker";
+	}
+
 }
-
