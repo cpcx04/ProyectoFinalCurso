@@ -11,7 +11,7 @@
 
 		<div class="container">
 			<h1>Formulario de Edición de Empleado</h1>
-			<form  th:action="@{/admin/empleados/edit/{id_empleado}}" action="#" th:object="${empleado}" method="post">
+			<form  th:action="@{/admin/empleados/edit/sumbit}" th:object="${empleado}" method="post">
 				<div class="form-group">
 					<span th:text="${empleado.id_empleado} ? 'Editar' : 'Nueva'"></span>
 					<input  type="hidden" th:field="*{id_empleado}" id="id"></input>

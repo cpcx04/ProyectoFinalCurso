@@ -45,7 +45,7 @@ public class EmpleadoController {
 
 			model.addAttribute("empleado", employee);
 
-			return "redirect:/admin/empleados/edit/{id_empleado}/form";
+			return "newWorker";
 		} else {
 
 			return "redirect:/admin/empleados/";
