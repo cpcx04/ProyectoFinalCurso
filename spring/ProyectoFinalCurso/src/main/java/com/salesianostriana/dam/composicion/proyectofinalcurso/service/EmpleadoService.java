@@ -33,4 +33,11 @@ public class EmpleadoService {
 		return result;
 	}
 	
+	public Empleado edit(Empleado employEmpleado) {
+		return trabajador.save(employEmpleado);
+	}
+
+
+
+	
 }

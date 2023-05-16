@@ -131,26 +131,6 @@ insert into Empleado (id_empleado, nombre, apellidos, dni, sueldo, mail, fecha_c
 insert into Empleado (id_empleado, nombre, apellidos, dni, sueldo, mail, fecha_contratacion, fecha_despido) values (99, 'FELIPE ANGEL', 'Romero', '34558345K', '€1236,12', 'Romero68@gmail.com', '02/03/2016', '15/10/2018');
 insert into Empleado (id_empleado, nombre, apellidos, dni, sueldo, mail, fecha_contratacion, fecha_despido) values (100, 'ARNALDO', 'López', '57238027K', '€1773,38', 'López74@gmail.com', '28/08/2021', '08/10/2012');
 
-insert into profesor (id_empleado, enPracticas, titulo) values (23, true, 'Licenciatura en Educación Inicial');
-insert into profesor (id_empleado, enPracticas, titulo) values (68, true, 'Doctorado en Pedagogía Infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (6, false, 'Título Universitario');
-insert into profesor (id_empleado, enPracticas, titulo) values (30, true, 'Licenciatura en Educación Preescolar');
-insert into profesor (id_empleado, enPracticas, titulo) values (35, false, 'Título Universitario');
-insert into profesor (id_empleado, enPracticas, titulo) values (13, false, 'Doctorado en Educación Infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (42, true, 'Maestría en Pedagogía Infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (65, true, 'Licenciatura en Educación Especial con énfasis en educación infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (41, false, 'Título Universitario');
-insert into profesor (id_empleado, enPracticas, titulo) values (84, false, 'Maestría en Educación Infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (51, false, 'Doctorado en Pedagogía Infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (14, true, 'Licenciatura en Educación Primaria con énfasis en educación infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (90, false, 'Licenciatura en Educación Inicial');
-insert into profesor (id_empleado, enPracticas, titulo) values (97, true, 'Licenciatura en Educación Primaria con énfasis en educación infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (8, false, 'Título Universitario');
-insert into profesor (id_empleado, enPracticas, titulo) values (94, false, 'Doctorado en Pedagogía Infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (68, false, 'Licenciatura en Educación Infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (98, false, 'Licenciatura en Educación Inicial');
-insert into profesor (id_empleado, enPracticas, titulo) values (81, true, 'Maestría en Educación Infantil');
-insert into profesor (id_empleado, enPracticas, titulo) values (13, false, 'Licenciatura en Educación Primaria con énfasis en educación infantil');
 
 insert into profesor (id_empleado, enPracticas, titulo) values (42, true, 'Licenciatura en Educación Inicial');
 
