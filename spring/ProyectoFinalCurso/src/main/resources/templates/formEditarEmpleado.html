@@ -11,40 +11,45 @@
 
 		<div class="container">
 			<h1>Formulario de Edición de Empleado</h1>
-			<form  th:action="@/admin" th:object="${empleado}" method="post">
+			<form  th:action="@{/admin/empleados/edit/{id_empleado}}" th:object="${empleado}" method="post">
 				<div class="form-group">
+<<<<<<< HEAD
 					<label for="nombre" th:text="">Nombre:</label>
 					<input type="text" class="form-control" id="nombre" name="nombre" th:field="*{nombre}" required>
+=======
+					<label for="nombre">Nombre:</label>
+					<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" th:field="*{nombre}"required>
+>>>>>>> b7f2074f8fea0fde89d8a9c5d6cccc2307db83be
 				</div>
 
 				<div class="form-group">
 					<label for="apellidos">Apellidos:</label>
-					<input type="text" class="form-control" id="apellidos" name="apellidos" required>
+					<input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" th:field="*{apellidos}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="dni">DNI:</label>
-					<input type="text" class="form-control" id="dni" name="dni" required>
+					<input type="text" class="form-control" id="dni" name="dni" placeholder="47266435L" th:field="*{dni}"required>
 				</div>
 
 				<div class="form-group">
 					<label for="sueldo">Sueldo:</label>
-					<input type="text" class="form-control" id="sueldo" name="sueldo" required>
+					<input type="text" class="form-control" id="sueldo" name="sueldo" placeholder="1...$" th:field="*{sueldo}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="email">Email:</label>
-					<input type="email" class="form-control" id="email" name="email" required>
+					<input type="email" class="form-control" id="email" name="email" placeholder="pakitosalas22@gmail.com" th:field="*{email}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="fechaContratacion">Fecha de Contratación:</label>
-					<input type="date" class="form-control" id="fechaContratacion" name="fechaContratacion" required>
+					<input type="date" class="form-control" id="fechaContratacion" name="fechaContratacion" th:field="*{fechaContratacion}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="fechaDespido">Fecha de Despido:</label>
-					<input type="date" class="form-control" id="fechaDespido" name="fechaDespido">
+					<input type="date" class="form-control" id="fechaDespido" name="fechaDespido" th:field="*{fechaDespido}">
 				</div>
 
 				<button type="submit" class="btn btn-primary">Guardar</button>

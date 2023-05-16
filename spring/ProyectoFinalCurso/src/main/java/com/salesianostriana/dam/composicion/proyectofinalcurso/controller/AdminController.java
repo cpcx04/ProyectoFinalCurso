@@ -20,5 +20,5 @@ public class AdminController {
 	public String admin(@RequestParam(name="id_empleado",required=false)Long id,Model model) {
 		model.addAttribute("trabajador",employeeService.findAll());
 		return "admin";
-	}	
+	}
 }
