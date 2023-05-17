@@ -30,7 +30,7 @@ public class EmpleadoController {
 		return "redirect:/admin";
 	}
 
-	@GetMapping("/nuevo/sumbit")
+	@PostMapping("/edit/sumbit")
 	public String procesarWorker(@ModelAttribute("empleado")Empleado empleado) {
 		employeeService.save(empleado);
 		return "redirect:/admin/empleados/edit/{id_empleado}";
@@ -48,13 +48,13 @@ public class EmpleadoController {
 			return "newWorker";
 		} else {
 
-			return "redirect:/admin/empleados/";
+			return "redirect:/admin/empleados/edit/confirm/submit";
 		}
 	}
 	
-	@PostMapping("/edit/submit")
+	@PostMapping("/edit/confirm/submit")
 	public String procesarEdit(@ModelAttribute("empleado")Empleado empleado) {
 		employeeService.edit(empleado);
-		return "newWorker";
+		return "redirect:/admin";
 	}
 }

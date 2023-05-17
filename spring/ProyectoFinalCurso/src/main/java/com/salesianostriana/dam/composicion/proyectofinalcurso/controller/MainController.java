@@ -16,7 +16,7 @@ public class MainController {
 		return "login";
 	}
 
-	@GetMapping("/calendar")
+	@GetMapping("/calendario")
 	public String calendario() {
 		return "calendario";
 	}
