@@ -168,11 +168,6 @@ insert into Clase (num_clase, semestre) values (8, '30/03/2023');
 insert into Clase (num_clase, semestre) values (9, '30/03/2023');
 insert into Clase (num_clase, semestre) values (10,'30/03/2023');
 
-insert into tipoMatricula (tipo, cuota, masde1Hijo) values ('Normal', 350, true);
-insert into tipoMatricula (tipo, cuota, masde1Hijo) values ('Basica', 800, false);
-insert into tipoMatricula (tipo, cuota, masde1Hijo) values ('Premium', 900, true);
-
-insert into directora (id_empleado, plusSueldo,horarioConsulta ) values (74,'€2320,29' ,'9:00-12:00');
 
 
 insert into Alumno (id_alumno, num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (1, 8, 800, 1, 'Pablo', 'Castilla', 'Serrano', 'Alergia al perfume');

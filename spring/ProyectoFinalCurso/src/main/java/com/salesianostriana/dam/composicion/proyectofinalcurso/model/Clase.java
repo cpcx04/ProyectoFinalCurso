@@ -1,6 +1,5 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,11 +31,11 @@ public class Clase {
 	@Column(name="NUM_CLASE")
 	private long num_clase;
 	@Column(name="SEMESTRE")
-	private LocalDate semestre;
+	private String semestre;
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy="curso", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="clase", fetch = FetchType.EAGER)
 	@Builder.Default
 	private List<Alumno> alumnos = new ArrayList<>();
 }

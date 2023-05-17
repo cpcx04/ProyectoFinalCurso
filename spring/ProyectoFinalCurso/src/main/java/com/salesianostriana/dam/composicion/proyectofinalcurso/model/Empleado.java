@@ -26,14 +26,25 @@ public class Empleado {
 	@Column(name="ID_EMPLEADO")
 	private Long id_empleado;
 	
-	private String nombre,apellidos,dni;
+	@Column(name="NOMBRE")
+	private String nombre;
 	
+	@Column(name="APELLIDOS")
+	private String apellidos;
+	
+	@Column(name="DNI")
+	private String dni;
+	
+	@Column(name="SUELDO")
 	private String sueldo;
 	
+	@Column(name="MAIL")
 	private String mail;
 
+	@Column(name="FECHA_CONTRTACION")
 	private String fechaContratacion;
 	
+	@Column(name="FECHA_DESPIDO")
 	private String fechaDespido;
 	
 	

@@ -27,10 +27,20 @@ public class Alumno {
 	@Column(name="ID_ALUMNO")
 	private Long id_alumno;
 	
+	@Column(name="NUM_CLASE")
+	private int num_clase;
+	
+	
+	@Column(name="CUOTA")
+	private double cuota;
+	
+	@Column(name="ID_DIETA")
+	private int id_dieta;
+	
 	@Column(name="NOMBRE")
 	private String nombre;
 	
-	@Column(name="APELLIDO")
+	@Column(name="APELLIDO1")
 	private String apellido;
 	
 	@Column(name="APELLIDO2")
@@ -39,21 +49,23 @@ public class Alumno {
 	@Column(name="ALERGIAS")
 	private String alergias;
 	
+	
+	
 	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name="fk_alumno_curso"))	
-	private Clase clasee;
+	@JoinColumn(foreignKey = @ForeignKey(name="fk_alumno_clase"))	
+	private Clase clase;
 	
 	/*
 	 * MÉTODOS HELPER PARA LA ASOCIACIÓN CON CURSO
 	 */
 	
-	public void addToCurso(Clase clase) {
-		this.clasee = clase;
+	public void addToClase(Clase clase) {
+		this.clase = clase;
 		clase.getAlumnos().add(this);
 	}
 	
-	public void removeFromCurso(Clase clase) {
-		clasee.getAlumnos().remove(this);
-		this.clasee = null;		
+	public void removeFromClase(Clase clase) {
+		clase.getAlumnos().remove(this);
+		this.clase = null;		
 	}
 }
