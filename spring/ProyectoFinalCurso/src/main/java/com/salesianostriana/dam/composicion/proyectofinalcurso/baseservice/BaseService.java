@@ -1,50 +1,18 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.baseservice;
-
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+public interface BaseService <T, ID>{
 
-public class BaseService <T,ID,R extends JpaRepository<T,ID>> implements BaseServiceInterface<T,ID>{
-	
-	protected R menuRepo;
-	
-	public BaseService(R menuRepo) {
-		this.menuRepo=menuRepo;
-	}
-	
-	@Override
-	public T save(T t) {
-		return menuRepo.save(t);
-	}
-	
-	public List<T> saveAll(List<T>list){
-		return menuRepo.saveAll(list);
-	}
+    List<T> findAll();
 
-	@Override
-	public Optional<T> findById(ID id) {
-		return Optional.ofNullable(menuRepo.findById(id).orElse(null));
-	}
+    Optional<T> findById(ID id);
 
-	@Override
-	public List<T> findAll() {
-		return menuRepo.findAll();
-	}
+    T save(T t);
 
-	@Override
-	public T edit(T t) {
-		return menuRepo.save(t);
-	}
+    T edit(T t);
 
-	@Override
-	public void delete(T t) {
-		menuRepo.delete(t);
-	}
+    void delete(T t);
 
-	@Override
-	public void deleteById(ID id) {
-		menuRepo.deleteById(id);
-	}
-
+    void deleteById(ID id);
 }

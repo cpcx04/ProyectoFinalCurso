@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,42 +21,40 @@ public class EmpleadoController {
 	@Autowired
 	private EmpleadoService employeeService;
 
+
+	@GetMapping("/nuevo")
+	public String nuevoTrabajador(Model model) {
+		model.addAttribute("empleado", new Empleado());
+		return "newWorker";
+	}
+
+	@PostMapping("/nuevo/submit")
+	public String submitNuevoTrabajador(@ModelAttribute("empleado")Empleado empleado, Model model) {
+		employeeService.save(empleado);
+		return "redirect:/admin";
+	}
+
 	@GetMapping("/delete/{id_empleado}")
 	public String delete(@PathVariable("id_empleado") Long id, Model model) {
-		Empleado empleado = employeeService.findById(id);
-
+		Optional<Empleado> empleado = employeeService.findById(id);
+		Empleado empleador = empleado.get();
 		if (empleado != null) {
-			employeeService.delete(empleado);
+			employeeService.delete(empleador);
 		}
 
 		return "redirect:/admin";
 	}
 
-	@PostMapping("/edit/sumbit")
-	public String procesarWorker(@ModelAttribute("empleado")Empleado empleado) {
-		employeeService.save(empleado);
-		return "redirect:/admin/empleados/edit/{id_empleado}";
-	}
-	
 	@GetMapping("/edit/{id_empleado}")
-	public String editarProducto(@PathVariable("id_empleado") Long id, Model model) {
-
-		Empleado employee = employeeService.findById(id);
-
-		if (employee != null) {
-
-			model.addAttribute("empleado", employee);
-
+	public String editarTrabajador(@PathVariable("id_empleado") Long id, Model model) {
+		Optional<Empleado> empleado = employeeService.findById(id);
+		Empleado empleador = empleado.get();
+		if(empleado.isPresent()) {
+			model.addAttribute("empleado", empleador);
 			return "newWorker";
-		} else {
-
-			return "redirect:/admin/empleados/edit/confirm/submit";
+		}else{
+			return "redirect:/admin";
 		}
 	}
-	
-	@PostMapping("/edit/confirm/submit")
-	public String procesarEdit(@ModelAttribute("empleado")Empleado empleado) {
-		employeeService.edit(empleado);
-		return "redirect:/admin";
-	}
+		
 }

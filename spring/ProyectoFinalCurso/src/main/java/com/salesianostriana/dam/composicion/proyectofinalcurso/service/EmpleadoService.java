@@ -1,42 +1,41 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.salesianostriana.dam.composicion.proyectofinalcurso.baseservice.BaseServiceImp;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Empleado;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.repository.EmpleadoRepository;
 
 @Service
-public class EmpleadoService {
+public class EmpleadoService extends BaseServiceImp<Empleado, Long, EmpleadoRepository>{
 
-	@Autowired
-	private EmpleadoRepository trabajador;
-	 
-	public List<Empleado> findAll(){
-		return trabajador.findAll();
-	}
+    @Autowired
+    private EmpleadoRepository repositorio;
 
-	
-	public Empleado save(Empleado employee) {
-		return trabajador.save(employee);
-	}
-	
-	public Empleado findById(Long id) {
-		return trabajador.findById(id).orElse(null);
-	}
-	
-	public Empleado delete(Empleado employee) {
-		Empleado result= findById(employee.getId_empleado());
-		trabajador.delete(result);
-		return result;
-	}
-	
-	public Empleado edit(Empleado employEmpleado) {
-		return trabajador.save(employEmpleado);
-	}
 
+    public List<Empleado> findAll() {
+        return repositorio.findAll();
+    }
+
+
+    public Empleado save(Empleado trabajador) {
+        return repositorio.save(trabajador);
+    }
+
+
+    public Optional<Empleado> findById(Long id) {
+        return repositorio.findById(id);
+    }
+
+    @Override
+    public void delete(Empleado t) {
+        Optional<Empleado> result = findById(t.getId_empleado());
+        result.ifPresent(trabajador -> repositorio.delete(trabajador));
+    }
 
 
 	
