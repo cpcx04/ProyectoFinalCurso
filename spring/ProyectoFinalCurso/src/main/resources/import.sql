@@ -348,4 +348,4 @@ insert into Familia (id_alumno, tutorLegal, madre, padre, hermanos) values (99, 
 insert into Familia (id_alumno, tutorLegal, madre, padre, hermanos) values (100, 'Padre', 'Victoria', 'Esteban', 'Jorge');
 
 
-ALTER SEQUENCE hibernate_sequence RESTART WITH 1000;
+ALTER SEQUENCE hibernate_sequence RESTART WITH 1500;
