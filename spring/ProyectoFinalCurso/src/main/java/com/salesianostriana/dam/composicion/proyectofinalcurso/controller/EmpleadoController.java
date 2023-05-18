@@ -53,7 +53,7 @@ public class EmpleadoController {
 			model.addAttribute("empleado", empleador);
 			return "newWorker";
 		}else{
-			return "redirect:/admin";
+			return "redirect:/admin/empleados";
 		}
 	}
 		
