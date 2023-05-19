@@ -3,7 +3,6 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-
 .imagenEmpresa {
     background-position: center;
 }
@@ -186,29 +185,30 @@ body {
 /**/
 /* OV PRELOADER */ 
 .ov-preloader {
-    background-color: #e42abb;
-    z-index: 999999;
-    height: 100%;
+    background-color: #e42abb !important;
+    z-index: 999999 !important;
+    height: 100% !important;
     width: 100%;
+    position: fixed;
  }
  ::-webkit-scrollbar {
     display: none;
 }
  .ov-preloader .ov-icon {
-    width: 100px;
-    height: 100px;
-    position: absolute;
+    width: 100px !important;
+    height: 100px !important;
+    position: absolute !important;
     left: 50%;
     top: 50%;
     background-image: url(../img/giphy.gif);
     background-repeat: no-repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    background-size: cover;
-    margin: -50px 0 0 -50px;
+    background-position: center !important;
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+    margin: -50px 0 0 -50px !important;
  }
  .ov-preloader-hidden{
-    overflow: hidden;
-    width: 0px;
-    height: 0px;
+    overflow: hidden !important;
+    width: 0px !important;
+    height: 0px !important;
  }

@@ -1,12 +1,7 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.controller;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.salesianostriana.dam.composicion.proyectofinalcurso.service.MenuService;
 
 @Controller
 public class MainController {
@@ -21,7 +16,7 @@ public class MainController {
 		return "login";
 	}
 
-	@GetMapping("/calendar")
+	@GetMapping("/calendario")
 	public String calendario() {
 		return "calendario";
 	}

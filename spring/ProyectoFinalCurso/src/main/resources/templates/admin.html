@@ -31,7 +31,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                             <tr th:each=" empleado : ${trabajador}">
+                             <tr th:each=" empleado : ${empleado}">
 								<td th:text="${empleado.id_empleado}"></td>
                                 <td th:text="${empleado.nombre}"></td>
                                 <td th:text="${empleado.apellidos}"></td>
@@ -48,6 +48,7 @@
                             </tr>    
                         </tbody>
                     </table>
+                    <a th:href="@{/admin/empleados/nuevo}" class="btn btn-warning">Nuevo empleado</a>
                 </div>
             </div>
         </div>
