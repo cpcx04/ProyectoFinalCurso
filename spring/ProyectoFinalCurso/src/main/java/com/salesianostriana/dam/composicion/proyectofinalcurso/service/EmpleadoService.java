@@ -21,9 +21,10 @@ public class EmpleadoService extends BaseServiceImp<Empleado, Long, EmpleadoRepo
         return repositorio.findAll();
     }
 
+  
 
-    public Empleado save(Empleado trabajador) {
-        return repositorio.save(trabajador);
+    public Empleado save(Empleado empleado) {
+        return repositorio.save(empleado);
     }
 
 
@@ -36,7 +37,5 @@ public class EmpleadoService extends BaseServiceImp<Empleado, Long, EmpleadoRepo
         Optional<Empleado> result = findById(t.getId_empleado());
         result.ifPresent(trabajador -> repositorio.delete(trabajador));
     }
-
-
 	
 }

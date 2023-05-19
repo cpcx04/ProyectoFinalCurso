@@ -11,8 +11,12 @@
 
 		<div class="container">
 			<h1>Formulario de Empleados</h1>
-			<form  th:action="@{/admin/empleados/edit/{id_empleado}}" th:object="${empleado}" method="post">
-				<input  type="hidden" th:field="*{id_empleado}" id="id_empleado"></input>
+			<!--/admin/empleados/edit/{id_empleado}-->
+			<form  th:action="@{/admin/empleados/nuevo/submit}" th:object="${empleado}" method="post">
+				
+				<span th:text="${empleado.id_empleado} ? 'Editar' : 'Nuevo'"></span> empleado </h1>
+				
+				
 				<div class="form-group">
 					<label for="nombre">Nombre:</label>
 					<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" th:field="*{nombre}"required>
