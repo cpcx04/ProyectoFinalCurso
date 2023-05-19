@@ -32,7 +32,6 @@ public class EmpleadoService extends BaseServiceImp<Empleado, Long, EmpleadoRepo
         return repositorio.findById(id);
     }
 
-    @Override
     public void delete(Empleado t) {
         Optional<Empleado> result = findById(t.getId_empleado());
         result.ifPresent(trabajador -> repositorio.delete(trabajador));
