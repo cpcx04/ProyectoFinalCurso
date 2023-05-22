@@ -1,5 +1,5 @@
-window.addEventListener('load', function() {
-	setTimeout(function() {
+window.addEventListener('load', function () {
+	setTimeout(function () {
 		document.querySelector('.ov-preloader').classList.add('ov-preloader-hidden');
 	}, 2000);
 }
@@ -16,7 +16,65 @@ function ocultarImg() {
 }
 
 let myObject = document.querySelector('svg');
-myObject.addEventListener('click', function() {
+myObject.addEventListener('click', function () {
 	myObject.classList.toggle('rotate');
 });
 
+function validarFormulario() {
+	var nombre = document.getElementById("nombre").value.trim();
+	var apellidos = document.getElementById("apellidos").value.trim();
+	var dni = document.getElementById("dni").value.trim();
+	var sueldo = document.getElementById("sueldo").value.trim();
+	var email = document.getElementById("email").value.trim();
+	var fechaContratacion = document.getElementById("fechaContratacion").value.trim();
+	var fechaDespido = document.getElementById("fechaDespido").value.trim();
+
+	var regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]{2,}$/;
+	var regexDni = /^\d{8}[a-zA-Z]$/;
+	var regexSueldo = /^(8\d{2}|9\d{2}|1\d{3}|2\d{3})$/;
+	var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	var fechaContratacionObj = new Date(fechaContratacion);
+	var fechaDespidoObj = new Date(fechaDespido);
+
+	if (!regexNombre.test(nombre)) {
+		alert("El nombre no es válido,debe contener minimo 3 caracteres");
+		return false;
+	}
+
+	if (!regexNombre.test(apellidos)) {
+		alert("Los apellidos no son válidos");
+		return false;
+	}
+
+	if (!regexDni.test(dni)) {
+		alert("El DNI no es válido debe contener : \n -->9 Caractener en formato : \n\t 47269876P");
+		return false;
+	}
+
+	if (!regexSueldo.test(sueldo) || sueldo < 800 || sueldo > 2200) {
+		alert("El sueldo no es válido, el salario minimo interprofesional debe ser entre 800 y 2200");
+		return false;
+	}
+
+	if (!regexEmail.test(email) || email.indexOf("@gmail.com") === -1) {
+		alert("El email no es válido, por favor siga el siguiente formato de email: \n loquesea@gmail.com");
+		return false;
+	}
+
+	if (!fechaContratacionObj || !fechaDespidoObj) {
+		alert("Las fechas no son válidas, la fecha de contratacion no puede ser la misma que la de despido");
+		return false;
+	}
+
+	if (fechaContratacionObj > fechaDespidoObj) {
+		alert("La fecha de contratación no puede ser superior a la fecha de despido");
+		return false;
+	}
+	//Añade un if que verifique que la fecha se compone encuentra entre 1995 y 2030
+	if (fechaContratacionObj < 1995 || fechaContratacionObj > 2030) {
+		alert("La fecha de contratación no puede ser inferior a 1995 ni superior a 2030");
+		return false;
+	}
+
+	return true;
+}

@@ -35,7 +35,7 @@ public class Empleado {
 	private String dni;
 	
 	@Column(name="SUELDO")
-	private String sueldo;
+	private double sueldo;
 	
 	@Column(name="MAIL")
 	private String mail;

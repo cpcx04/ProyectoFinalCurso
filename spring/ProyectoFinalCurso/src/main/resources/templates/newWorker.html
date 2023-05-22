@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 
 <head th:replace="~{/fragmentos/head::head}">
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 
 <body>
 	<div th:replace="~{/fragmentos/preloader::preloader}"></div>
@@ -11,45 +11,50 @@
 
 		<div class="container">
 			<h1>Formulario de Empleados</h1>
-			<!--/admin/empleados/edit/{id_empleado}-->
-			<form  th:action="@{/admin/empleados/nuevo/submit}" th:object="${empleado}" method="post">
-				
+			<form th:action="@{/admin/empleados/nuevo/submit}" th:object="${empleado}" method="post"
+				onsubmit="return validarFormulario();">
 				<span th:text="${empleado.id_empleado} ? 'Editar' : 'Nuevo'"></span> empleado </h1>
-				
-				
+
 				<div class="form-group">
 					<label for="nombre">Nombre:</label>
-					<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" th:field="*{nombre}"required>
+					<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
+						th:field="*{nombre}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="apellidos">Apellidos:</label>
-					<input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" th:field="*{apellidos}" required>
+					<input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos"
+						th:field="*{apellidos}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="dni">DNI:</label>
-					<input type="text" class="form-control" id="dni" name="dni" placeholder="47266435L" th:field="*{dni}"required>
+					<input type="text" class="form-control" id="dni" name="dni" placeholder="47266435L"
+						th:field="*{dni}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="sueldo">Sueldo:</label>
-					<input type="text" class="form-control" id="sueldo" name="sueldo" placeholder="1...$" th:field="*{sueldo}" required>
+					<input type="text" class="form-control" id="sueldo" name="sueldo" placeholder="1...$"
+						th:field="*{sueldo}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="email">Email:</label>
-					<input type="email" class="form-control" id="email" name="email" placeholder="pakitosalas22@gmail.com" th:field="*{mail}" required>
+					<input type="email" class="form-control" id="email" name="email"
+						placeholder="pakitosalas22@gmail.com" th:field="*{mail}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="fechaContratacion">Fecha de Contratación:</label>
-					<input type="date" class="form-control" id="fechaContratacion" name="fechaContratacion" th:field="*{fechaContratacion}" required>
+					<input type="date" class="form-control" id="fechaContratacion" name="fechaContratacion"
+						th:field="*{fechaContratacion}" required>
 				</div>
 
 				<div class="form-group">
 					<label for="fechaDespido">Fecha de Despido:</label>
-					<input type="date" class="form-control" id="fechaDespido" name="fechaDespido" th:field="*{fechaDespido}">
+					<input type="date" class="form-control" id="fechaDespido" name="fechaDespido"
+						th:field="*{fechaDespido}">
 				</div>
 
 				<button type="submit" class="btn btn-primary">Guardar</button>

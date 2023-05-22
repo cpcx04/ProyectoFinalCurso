@@ -17,6 +17,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
+					<a th:href="@{/admin/empleados/nuevo}" class="btn btn-warning">Nuevo empleado</a>
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
@@ -36,7 +37,7 @@
                                 <td th:text="${empleado.nombre}"></td>
                                 <td th:text="${empleado.apellidos}"></td>
                                 <td th:text="${empleado.dni}"></td>
-                                <td th:text="${empleado.sueldo}"></td>
+                                <td th:text="${empleado.sueldo} + € "></td>
                                 <td th:text="${empleado.mail}"></td>
                                 <td th:text="${empleado.fechaContratacion}"></td>
                                 <td th:text="${empleado.fechaDespido}"></td>
@@ -48,7 +49,6 @@
                             </tr>    
                         </tbody>
                     </table>
-                    <a th:href="@{/admin/empleados/nuevo}" class="btn btn-warning">Nuevo empleado</a>
                 </div>
             </div>
         </div>
