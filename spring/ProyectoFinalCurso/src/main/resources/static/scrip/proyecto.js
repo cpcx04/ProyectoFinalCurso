@@ -23,21 +23,24 @@ myObject.addEventListener('click', function () {
 function validarFormulario() {
 	var nombre = document.getElementById("nombre").value.trim();
 	var apellidos = document.getElementById("apellidos").value.trim();
+	var apellido2 = document.getElementById("apellido2").value.trim();
 	var dni = document.getElementById("dni").value.trim();
 	var sueldo = document.getElementById("sueldo").value.trim();
 	var email = document.getElementById("email").value.trim();
 	var fechaContratacion = document.getElementById("fechaContratacion").value.trim();
 	var fechaDespido = document.getElementById("fechaDespido").value.trim();
+	var num_clase = document.getElementById("num_clase").value.trim();
+	var id_dieta = document.getElementById("id_dieta").value.trim();
 
 	var regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]{2,}$/;
 	var regexDni = /^\d{8}[a-zA-Z]$/;
 	var regexSueldo = /^(8\d{2}|9\d{2}|1\d{3}|2\d{3})$/;
 	var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	var fechaContratacionObj = new Date(fechaContratacion);
+	var fechaContratacionObj = new Date(fechaContrratacion);
 	var fechaDespidoObj = new Date(fechaDespido);
 
 	if (!regexNombre.test(nombre)) {
-		alert("El nombre no es válido,debe contener minimo 3 caracteres");
+		alert("El nombre no es válido, debe contener mínimo 3 caracteres");
 		return false;
 	}
 
@@ -46,13 +49,18 @@ function validarFormulario() {
 		return false;
 	}
 
+	if (!regexNombre.test(apellido2)) {
+		alert("El segundo apellido no es válido");
+		return false;
+	}
+
 	if (!regexDni.test(dni)) {
-		alert("El DNI no es válido debe contener : \n -->9 Caractener en formato : \n\t 47269876P");
+		alert("El DNI no es válido debe contener: \n --> 9 Caractener en formato : \n\t 47269876P");
 		return false;
 	}
 
 	if (!regexSueldo.test(sueldo) || sueldo < 800 || sueldo > 2200) {
-		alert("El sueldo no es válido, el salario minimo interprofesional debe ser entre 800 y 2200");
+		alert("El sueldo no es válido, el salario mínimo interprofesional debe ser entre 800 y 2200");
 		return false;
 	}
 
@@ -62,7 +70,7 @@ function validarFormulario() {
 	}
 
 	if (!fechaContratacionObj || !fechaDespidoObj) {
-		alert("Las fechas no son válidas, la fecha de contratacion no puede ser la misma que la de despido");
+		alert("Las fechas no son válidas, la fecha decontratación no puede ser la misma que la de despido");
 		return false;
 	}
 
@@ -70,25 +78,16 @@ function validarFormulario() {
 		alert("La fecha de contratación no puede ser superior a la fecha de despido");
 		return false;
 	}
-	//Añade un if que verifique que la fecha se compone encuentra entre 1995 y 2030
-	if (fechaContratacionObj < 1995 || fechaContratacionObj > 2030) {
-		alert("La fecha de contratación no puede ser inferior a 1995 ni superior a 2030");
+
+	if (fechaContratacionObj < new Date(1995, 0, 1) || fechaContratacionObj > new Date(2030, 11, 31)) {
+		alert("La fecha de contratación debe estar entre el 1 de enero de 1995 y el 31 de diciembre de 2030");
+		return false;
+	}
+
+	if (num_clase < 0 || id_dieta < 0) {
+		alert("Los números de clase y de dieta no pueden ser negativos");
 		return false;
 	}
 
 	return true;
 }
-var granimInstance =new Granim({
-	element: '#mi-canvas',
-	direction: 'diagonal',
-	isPausedWhenNotInView: true,
-	states : {
-	  "default-state": {
-		gradients: [
-		  ['#AA076B', '#61045F'],
-		  ['#02AAB0', '#00CDAC']
-		],
-		transitionSpeed: 7000
-	  }
-	}
-  });

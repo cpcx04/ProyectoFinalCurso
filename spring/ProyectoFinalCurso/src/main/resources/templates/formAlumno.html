@@ -26,44 +26,7 @@
 					<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido"
 						th:field="*{apellido}" required>
 				</div>
-
-				<div class="form-group">
-					<label for="apellido2">Segundo Apellido:</label>
-					<input type="text" class="form-control" id="apellido2" name="apellido2"
-						placeholder="Segundo Apellido" th:field="*{apellido2}" required>
-				</div>
-
-				<div class="form-group">
-					<label for="num_clase">Número de Clase:</label>
-					<input type="number" class="form-control" id="num_clase" name="num_clase"
-						placeholder="Número de Clase" th:field="*{num_clase}" required>
-				</div>
-
-				<div class="form-group">
-					<label for="cuota">Cuota:</label>
-					<select class="form-control" id="cuota" name="cuota" th:field="*{cuota}" required>
-						<option value="300">300</option>
-						<option value="450">450</option>
-						<option value="800">800</option>
-						<option value="900">900</option>
-					</select>
-				</div>
-
-				<div class="form-group">
-					<label for="id_dieta">ID Dieta:</label>
-					<input type="number" class="form-control" id="id_dieta" name="id_dieta" placeholder="ID Dieta"
-						th:field="*{id_dieta}" required>
-				</div>
-
-				<div class="form-group">
-					<label for="alergias">Alergias:</label>
-					<input type="text" class="form-control" id="alergias" name="alergias" placeholder="Alergias"
-						th:field="*{alergias}">
-				</div>
-
-				<button type="submit" class="btn btn-primary">Guardar</button>
-			</form>
-		</div>
+0
 	</main>
 	<footer th:replace="~{/fragmentos/footer::footer}"></footer>
 	<th:block th:replace=~{/fragmentos/jsfinal::javascriptfinal}></th:block>
