@@ -44,7 +44,7 @@ public class EmpleadoController {
 	public String delete(@PathVariable("ID_EMPLEADO") Long id, Model model) {
 		Optional<Empleado> empleado = employeeService.findById(id);
 		Empleado empleador = empleado.get();
-		if (empleado != null) {
+		if (empleado.isPresent()) {
 			employeeService.delete(empleador);
 		}
 

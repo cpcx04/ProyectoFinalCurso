@@ -34,8 +34,13 @@
                                 <li><a class="dropdown-item text-dark" th:href="@{/calendario}">Calendario</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link fuenteBlanca" th:href="@{/admin/empleados/}" sec:authorize="hasRole('ROLE_ADMIN')">Trabajadores</a>
+                        <li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN')">
+                            <a class="nav-link dropdown-toggle fuenteBlanca" href="#tipos" role="button"
+                                data-bs-toggle="dropdown">Admin</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-dark" th:href="@{/admin/empleados/}">Trabajadores</a></li>
+                                <li><a class="dropdown-item text-dark" th:href="@{/admin/alumno/}">Alumnos</a></li>
+                            </ul>
                         </li>
 
                     </ul>
