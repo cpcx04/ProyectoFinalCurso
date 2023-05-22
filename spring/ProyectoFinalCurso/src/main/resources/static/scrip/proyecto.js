@@ -78,3 +78,17 @@ function validarFormulario() {
 
 	return true;
 }
+var granimInstance =new Granim({
+	element: '#mi-canvas',
+	direction: 'diagonal',
+	isPausedWhenNotInView: true,
+	states : {
+	  "default-state": {
+		gradients: [
+		  ['#AA076B', '#61045F'],
+		  ['#02AAB0', '#00CDAC']
+		],
+		transitionSpeed: 7000
+	  }
+	}
+  });
