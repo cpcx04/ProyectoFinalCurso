@@ -208,7 +208,7 @@ insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, al
 insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (3, 800, 62, 'José', 'Valencia', 'Montes', 'Alergia al polen');
 insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (3, 800, 63, 'Fernando', 'Álvarez', 'Medina', 'Alergia a los productos químicos');
 insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (2, 800, 64, 'Rubén', 'Estévez', 'Muñoz', 'Alergia al maquillaje');
-insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (800, 65, 'Ricardo', 'Blanco', 'Serrano', 'Alergia a los tintes para el cabello');
+insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (3, 800,65, 'Ricardo', 'Blanco', 'Serrano', 'Alergia a los tintes para el cabello');
 insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (5, 800, 66, 'Sergio', 'Fuentes', 'Gallego', 'Alergia al humo');
 insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (1, 900, 67, 'Manuel', 'Fernández', 'Fernández', 'Alergia al sol');
 insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (5, 800, 68, 'Ramón', 'Oliver', 'Hernández', 'Alergia a los productos químicos');
@@ -245,5 +245,12 @@ insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, al
 insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (9, 900, 99, 'Guillermo', 'Rubio', 'Álvarez', 'Alergia a los tintes para el cabello');
 insert into Alumno (num_Clase, cuota, id_dieta, nombre, apellido1, apellido2, alergias) values (9, 800, 100, 'David', 'González', 'Esquivel', 'Alergia a los tintes para el cabello');
 
-
+insert into Empresa(nombre, descripcion, cuota, imagen) values ('Limpieza Sur', 'Servicio de limpieza profesional para hogares y oficinas.', 1500.0, 'https://www.fontaneroylimpiezasvalencia.com/wp-content/uploads/2020/04/Empresa-de-limpieza-a-domicilio-Valencia-profesional-300x150.jpg');
+insert into Empresa(nombre, descripcion, cuota, imagen) values ('Clean4U', 'Empresa de limpieza y mantenimiento de edificios y espacios públicos.', 2000.0, 'https://www.limpiezasideal.com/wp-content/uploads/2019/09/limpieza-de-hospitales-300x150.jpg');
+insert into Empresa(nombre, descripcion, cuota, imagen) values ('Babynut', 'Alimentación infantil saludable y nutritiva para bebés y niños pequeños.', 2500.0, 'https://cdn.visualfy.com/img/bebe-llorando%40480-300x150.jpg');
+insert into Empresa(nombre, descripcion, cuota, imagen) values ('Happymilk', 'Leche materna en polvo y alimentos complementarios para bebés y madres lactantes.', 1800.0, 'https://www.esteticalink.com/wp-content/uploads/2015/04/dieta-equilibrada-300x150.jpg');
+insert into Empresa(nombre, descripcion, cuota, imagen) values ('The BabyFood Co.', 'Comida orgánica y natural para bebés y niños pequeños, sin conservantes ni aditivos.', 3000.0, 'https://cdn.visualfy.com/img/bebe-llorando%40480-300x150.jpg');
+insert into Empresa(nombre, descripcion, cuota, imagen) values ('MediCare', 'Servicios médicos integrales para personas de todas las edades.', 5000.0, 'https://cdn.visualfy.com/img/bebe-llorando%40480-300x150.jpg');
+insert into Empresa(nombre, descripcion, cuota, imagen) values ('Salud en Casa', 'Servicios de atención médica en el hogar para pacientes con enfermedades crónicas.', 3500.0, 'https://cdn.visualfy.com/img/bebe-llorando%40480-300x150.jpg');
+insert into Empresa(nombre, descripcion, cuota, imagen) values ('Clinica Dia', 'Clínica de atención médica diaria para pacientes con enfermedades crónicas y discapacidades.', 4000.0, 'https://t1.uc.ltmcdn.com/es/posts/8/9/2/remedios_caseros_para_los_gases_del_bebe_41298_300_150.jpg');
 ALTER SEQUENCE hibernate_sequence RESTART WITH 1500;

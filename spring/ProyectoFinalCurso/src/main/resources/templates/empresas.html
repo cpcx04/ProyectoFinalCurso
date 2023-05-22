@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head th:replace="~{/fragmentos/head::head}">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/proyecto.css}">
+
+<body>
+	<div th:replace="~{/fragmentos/preloader::preloader}"></div>
+	<nav th:replace="~{/fragmentos/encabezado::encabezado}"></nav>
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-6" th:each="empresa : ${empresa}" style="height: 550px; margin-top: 90px;">
+					<span class="thumbnail">
+						<img th:src="${empresa.imagen}"
+							src="../static/img/1684779547244.jpg"
+							alt="..." class="img-responsive" height="150px" />
+						<h4><span th:text="${empresa.nombre}">Nombre de la Empresa</span></h4>
+						<p><span th:text="${empresa.descripcion}">Una descripción algo más larga del producto, para que
+								al menos pueda ocupar más de una línea.</span>.</p>
+						<hr class="line"/>
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<p class="price"><span th:text="${empresa.cuota} + €">23,99€</span></p>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<a href="/empresaACarrito/" th:href="@{/admin/servicios/empresaACarrito/{id}(id=${empresa.id})}">
+									<button type="button" class="btn btn-primary">
+										<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp;
+										Contratar Servicio
+									</button>
+								</a>
+							</div>
+						</div>
+					</span>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{/fragmentos/footer::footer}"></footer>
+	<th:block th:replace=~{/fragmentos/jsfinal::javascriptfinal}></th:block>
+	<script th:src="@{/scrip/proyecto.js}"></script>
+
+
+</body>
