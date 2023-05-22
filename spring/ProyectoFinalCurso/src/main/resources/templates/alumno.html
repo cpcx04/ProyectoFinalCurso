@@ -18,7 +18,7 @@
 			</div>
 			<div class="row">
 				<div class="col-12">
-					<a th:href="@{/admin/alumnos/nuevo}" class="btn btn-warning">Nuevo alumno</a>
+					<a th:href="@{/admin/alumno/nuevo}" class="btn btn-warning">Nuevo alumno</a>
 					<table class="table table-striped table-hover">
 						<thead>
 							<tr>
@@ -33,7 +33,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="alumno : ${alumnos}">
+							<tr th:each="alumno : ${alumno}">
 								<td th:text="${alumno.id_alumno}"></td>
 								<td th:text="${alumno.nombre}"></td>
 								<td th:text="${alumno.apellido} + ' ' + ${alumno.apellido2}"></td>
@@ -43,9 +43,9 @@
 								<td th:text="${alumno.alergias}"></td>
 
 								<td>
-									<a th:href="@{/admin/alumnos/edit/{id_alumno}(id_alumno=${alumno.id_alumno})}"
+									<a th:href="@{/admin/alumno/edit/{id_alumno}(id_alumno=${alumno.id_alumno})}"
 										class="btn btn-warning">Editar</a>
-									<a th:href="@{/admin/alumnos/delete/{id_alumno}(id_alumno=${alumno.id_alumno})}"
+									<a th:href="@{/admin/alumno/delete/{id_alumno}(id_alumno=${alumno.id_alumno})}"
 										class="btn btn-danger">Borrar</a>
 								</td>
 							</tr>
@@ -58,6 +58,7 @@
 	<footer th:replace="~{/fragmentos/footer::footer}"></footer>
 	<th:block th:replace=~{/fragmentos/jsfinal::javascriptfinal}></th:block>
 	<script th:src="@{/scrip/proyecto.js}"></script>
+	<script th:src="@{/scrip/granim.js-2.0.0/lib/Granim.js}"></script>
 
 </body>
 
