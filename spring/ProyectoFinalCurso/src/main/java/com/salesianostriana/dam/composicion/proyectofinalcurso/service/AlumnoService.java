@@ -20,9 +20,7 @@ public class AlumnoService extends BaseServiceImp<Alumno, Long, AlumnoRepository
     public List<Alumno> findAll() {
         return alumno.findAll();
     }
-
-  
-
+    
     public Alumno save(Alumno child) {
         return alumno.save(child);
     }

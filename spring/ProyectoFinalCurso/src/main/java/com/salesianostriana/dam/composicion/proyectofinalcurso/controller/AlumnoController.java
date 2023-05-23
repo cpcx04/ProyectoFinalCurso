@@ -41,7 +41,7 @@ public class AlumnoController {
 		return"redirect:/admin/alumno/";
 	}
 	
-	@GetMapping("/delete/{id_alumnoO}")
+	@GetMapping("/delete/{id_alumno}")
 	public String delete(@PathVariable("id_alumno")Long id,Model model) {
 		Optional<Alumno> alumno = alumnoService.findById(id);
 		Alumno alumnado=alumno.get();
@@ -63,10 +63,10 @@ public class AlumnoController {
 		}
 	}
 	
+	
 	@PostMapping("/edit/submit")
-	public String editSumbit(@ModelAttribute("empleado")Alumno child, Model model) {
+	public String editSumbit(@ModelAttribute("alumno")Alumno child, Model model) {
 		alumnoService.edit(child);
-		
 		return "redirect:/admin/alumno/";
 	}
 
