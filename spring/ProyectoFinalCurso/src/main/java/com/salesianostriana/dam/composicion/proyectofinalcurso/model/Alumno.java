@@ -20,12 +20,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="ALUMNO")
+@Table(name="alumno")
 public class Alumno {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID_ALUMNO")
+	@Column(name="id_alumno")
 	private Long id_alumno;
 	
 	@Column(name="NUM_CLASE")

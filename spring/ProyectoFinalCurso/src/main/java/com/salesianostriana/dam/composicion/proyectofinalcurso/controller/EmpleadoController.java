@@ -62,5 +62,12 @@ public class EmpleadoController {
 			return "redirect:/admin/empleados/";
 		}
 	}
+	
+	@PostMapping("/edit/submit")
+	public String editSumbit(@ModelAttribute("empleado")Empleado empleado, Model model) {
+		employeeService.edit(empleado);
+		
+		return "redirect:/admin/empleados/";
+	}
 		
 }
