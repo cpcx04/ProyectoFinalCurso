@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Alumno;
+import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Empleado;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.AlumnoService;
 
 @Controller
@@ -40,8 +41,8 @@ public class AlumnoController {
 		return"redirect:/admin/alumno/";
 	}
 	
-	@GetMapping("/delete/{ID_ALUMNO}")
-	public String delete(@PathVariable("ID_ALUMNO")Long id,Model model) {
+	@GetMapping("/delete/{id_alumnoO}")
+	public String delete(@PathVariable("id_alumno")Long id,Model model) {
 		Optional<Alumno> alumno = alumnoService.findById(id);
 		Alumno alumnado=alumno.get();
 		if(alumno.isPresent()) {
@@ -50,8 +51,8 @@ public class AlumnoController {
 		return "redirect:/admin/alumno/";
 	}
 	
-	@GetMapping("edit/{ID_ALUMNO}")
-	public String editarAlumno(@PathVariable("ID_ALUMNO") Long id, Model model) {
+	@GetMapping("edit/{id_alumno}")
+	public String editarAlumno(@PathVariable("id_alumno") Long id, Model model) {
 		Optional<Alumno> alumno = alumnoService.findById(id);
 		Alumno alumnado = alumno.get();
 		if(alumno.isPresent()) {
@@ -60,6 +61,13 @@ public class AlumnoController {
 		}else {
 			return "redirect:/admin/alumno/";
 		}
+	}
+	
+	@PostMapping("/edit/submit")
+	public String editSumbit(@ModelAttribute("empleado")Alumno child, Model model) {
+		alumnoService.edit(child);
+		
+		return "redirect:/admin/alumno/";
 	}
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.baseservice.BaseServiceImp;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Alumno;
+import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Empleado;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.repository.AlumnoRepository;
 
 @Service
@@ -22,10 +23,13 @@ public class AlumnoService extends BaseServiceImp<Alumno, Long, AlumnoRepository
 
   
 
-    public Alumno save(Alumno empleado) {
-        return alumno.save(empleado);
+    public Alumno save(Alumno child) {
+        return alumno.save(child);
     }
-
+    
+    public Alumno edit(Alumno child) {
+    	return alumno.save(child);
+    }
 
     public Optional<Alumno> findById(Long id) {
         return alumno.findById(id);

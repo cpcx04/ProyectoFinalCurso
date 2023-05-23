@@ -20,13 +20,14 @@ public class EmpleadoService extends BaseServiceImp<Empleado, Long, EmpleadoRepo
     public List<Empleado> findAll() {
         return repositorio.findAll();
     }
-
-  
-
+    
     public Empleado save(Empleado empleado) {
         return repositorio.save(empleado);
     }
 
+    public Empleado edit(Empleado empleado) {
+    	return repositorio.save(empleado);
+    }
 
     public Optional<Empleado> findById(Long id) {
         return repositorio.findById(id);
