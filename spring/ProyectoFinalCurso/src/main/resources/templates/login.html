@@ -8,7 +8,6 @@
     <video src="https://carontestudio.com/img/f4.mp4" autoplay="true" muted="true" loop="true"
         poster="https://carontestudio.com/img/contacto.jpg" class="video1"></video>
     <section id="sect1" class="sect">
-        <!-- Jumbotron -->
         <div class="px-4 py-5 px-md-5 text-center text-lg-start">
             <div class="container">
                 <div class="row gx-lg-5 align-items-center">
@@ -26,35 +25,17 @@
                         <div class="card">
                             <div class="card-body py-5 px-md-5">
                                 <form method="POST" action="#" th:action="@{/login}">
-                                    <!-- 2 column grid layout with text inputs for the first and last names -->
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="form3Example1" class="form-control" />
-                                                <label class="form-label" for="form3Example1">Nombre</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="form3Example2" class="form-control" />
-                                                <label class="form-label" for="form3Example2">Apellidos</label>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <!-- Email input -->
                                     <div class="form-outline mb-4">
                                         <input type="text" id="username" name="username" class="form-control" placeholder="Usuario" required autofocus/>
                                         <label class="form-label" for="form3Example3">Usario</label>
                                     </div>
 
-                                    <!-- Password input -->
                                     <div class="form-outline mb-4">
                                         <input type="password" name="password" id="password" class="form-control" placeholder="contraseña" required/>
                                         <label class="form-label" for="form3Example4">Contraseña</label>
                                     </div>
 
-                                    <!-- Checkbox -->
                                     <div class="form-check d-flex justify-content-center mb-4">
                                         <input class="form-check-input me-2" type="checkbox" value=""
                                             id="form2Example33" checked />
@@ -63,7 +44,6 @@
                                         </label>
                                     </div>
 
-                                    <!-- Submit button -->
 										<button type="submit" class="btn btn-primary btn-block mb-4" th:action="@{/login}" th:object="${usuario}" method="post">
                                         <input type="submit" name="enviar" value="Entrar" class="nav-link fuenteBlanca"/>	
                                     	</button>
@@ -74,7 +54,6 @@
                 </div>
             </div>
         </div>
-        <!-- Jumbotron -->
     </section>
 </body>
 
