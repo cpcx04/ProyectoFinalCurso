@@ -43,7 +43,7 @@ public class Empleado {
 	@Column(name="FECHA_CONTRATACION")
 	private String fechaContratacion;
 	
-	@Column(name="FECHA_DESPIDO")
+	@Column(name="FECHA_DE_DESPIDO")
 	private String fechaDespido;
 	
 	
