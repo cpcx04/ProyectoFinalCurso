@@ -78,7 +78,15 @@ body {
     transform: translateX(calc((100% - 100vw) / 2));
     z-index: -2;
 }
-
+.invalid-msg {
+  display: none;
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.invalid {
+  display: block;
+}
 /*Calendario*/
 .bodyCalendar {
     margin: 0;

@@ -1,11 +1,13 @@
-window.addEventListener('load', function () {
-	setTimeout(function () {
+window.addEventListener('load', function() {
+	setTimeout(function() {
 		document.querySelector('.ov-preloader').classList.add('ov-preloader-hidden');
 	}, 2000);
 }
 );
 let botonOcultar = document.getElementById('cerrarMenu');
 botonOcultar.addEventListener('click', ocultarImg);
+
+
 
 function ocultarImg() {
 	let div = document.querySelector('nav');
@@ -15,28 +17,28 @@ function ocultarImg() {
 		div.hidden = true;
 }
 
+
 let myObject = document.querySelector('svg');
-myObject.addEventListener('click', function () {
+myObject.addEventListener('click', function() {
 	myObject.classList.toggle('rotate');
 });
 
 function validarFormulario() {
 	var nombre = document.getElementById("nombre").value.trim();
 	var apellidos = document.getElementById("apellidos").value.trim();
-	var apellido2 = document.getElementById("apellido2").value.trim();
 	var dni = document.getElementById("dni").value.trim();
 	var sueldo = document.getElementById("sueldo").value.trim();
 	var email = document.getElementById("email").value.trim();
 	var fechaContratacion = document.getElementById("fechaContratacion").value.trim();
 	var fechaDespido = document.getElementById("fechaDespido").value.trim();
-	var num_clase = document.getElementById("num_clase").value.trim();
-	var id_dieta = document.getElementById("id_dieta").value.trim();
+	var username = document.getElementById("username").value.trim();
+	var password = document.getElementById("password").value.trim();
 
 	var regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]{2,}$/;
 	var regexDni = /^\d{8}[a-zA-Z]$/;
 	var regexSueldo = /^(8\d{2}|9\d{2}|1\d{3}|2\d{3})$/;
 	var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	var fechaContratacionObj = new Date(fechaContrratacion);
+	var fechaContratacionObj = new Date(fechaContratacion);
 	var fechaDespidoObj = new Date(fechaDespido);
 
 	if (!regexNombre.test(nombre)) {
@@ -46,11 +48,6 @@ function validarFormulario() {
 
 	if (!regexNombre.test(apellidos)) {
 		alert("Los apellidos no son válidos");
-		return false;
-	}
-
-	if (!regexNombre.test(apellido2)) {
-		alert("El segundo apellido no es válido");
 		return false;
 	}
 
@@ -84,10 +81,11 @@ function validarFormulario() {
 		return false;
 	}
 
-	if (num_clase < 0 || id_dieta < 0) {
-		alert("Los números de clase y de dieta no pueden ser negativos");
+	if (username !== "usuario" || password !== "contraseña") {
+		document.getElementById("invalid-msg").classList.add('invalid');
 		return false;
 	}
 
 	return true;
 }
+
