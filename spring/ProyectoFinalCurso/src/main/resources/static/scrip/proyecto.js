@@ -1,5 +1,5 @@
-window.addEventListener('load', function() {
-	setTimeout(function() {
+window.addEventListener('load', function () {
+	setTimeout(function () {
 		document.querySelector('.ov-preloader').classList.add('ov-preloader-hidden');
 	}, 2000);
 }
@@ -19,7 +19,7 @@ function ocultarImg() {
 
 
 let myObject = document.querySelector('svg');
-myObject.addEventListener('click', function() {
+myObject.addEventListener('click', function () {
 	myObject.classList.toggle('rotate');
 });
 
@@ -31,12 +31,10 @@ function validarFormulario() {
 	var email = document.getElementById("email").value.trim();
 	var fechaContratacion = document.getElementById("fechaContratacion").value.trim();
 	var fechaDespido = document.getElementById("fechaDespido").value.trim();
-	var username = document.getElementById("username").value.trim();
-	var password = document.getElementById("password").value.trim();
 
 	var regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]{2,}$/;
 	var regexDni = /^\d{8}[a-zA-Z]$/;
-	var regexSueldo = /^(8\d{2}|9\d{2}|1\d{3}|2\d{3})$/;
+	var regexSueldo = /^(8\d{2}|9\d{2}|1\d{3}|2\d{3})(\.\d{1,2})?$/;
 	var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	var fechaContratacionObj = new Date(fechaContratacion);
 	var fechaDespidoObj = new Date(fechaDespido);
@@ -52,7 +50,7 @@ function validarFormulario() {
 	}
 
 	if (!regexDni.test(dni)) {
-		alert("El DNI no es válido debe contener: \n --> 9 Caractener en formato : \n\t 47269876P");
+		alert("El DNI no es válido debe contener: \n --> 9 Sigue este formato : \n\t 47269876P");
 		return false;
 	}
 
@@ -72,7 +70,7 @@ function validarFormulario() {
 	}
 
 	if (fechaContratacionObj > fechaDespidoObj) {
-		alert("La fecha de contratación no puede ser superior a la fecha de despido");
+		alert("La fecha de contratación no puede ser anterior a la fecha de despido");
 		return false;
 	}
 
@@ -81,11 +79,19 @@ function validarFormulario() {
 		return false;
 	}
 
-	if (username !== "usuario" || password !== "contraseña") {
-		document.getElementById("invalid-msg").classList.add('invalid');
-		return false;
-	}
-
 	return true;
 }
-
+function validarLogin() {
+	
+	var usuario = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+ 
+	
+	if (!((usuario === "Admin" || usuario === "admin" || usuario === "User" || usuario === "user") && password === "1234" || (usuario === "Admin" || usuario === "admin") && password === "admin")) {
+	
+	   document.getElementById("invalid-msg").style.display = "block";
+	   return false;
+	}
+ 
+	return true; 
+ }

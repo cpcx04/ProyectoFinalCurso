@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 
@@ -15,8 +16,6 @@
 				th:action="${empleado.id_empleado != null} ? @{/admin/empleados/edit/submit} : @{/admin/empleados/nuevo/submit}"
 				th:object="${empleado}" onsubmit="return validarFormulario();">
 				<input type="hidden" th:field="*{id_empleado}" />
-				<input type="hidden" th:field="*{fechaContratacion}" />
-				<input type="hidden" th:field="*{fechaDespido}" />
 				<span th:text="${empleado.id_empleado != null} ? 'Editar' : 'Nuevo'"></span> empleado </h1>
 				<div class="form-group">
 					<label for="nombre">Nombre:</label>
