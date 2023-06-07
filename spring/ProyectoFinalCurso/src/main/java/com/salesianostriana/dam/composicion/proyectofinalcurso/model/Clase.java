@@ -9,6 +9,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -38,4 +41,16 @@ public class Clase {
 	@OneToMany(mappedBy="clase", fetch = FetchType.EAGER)
 	@Builder.Default
 	private List<Alumno> alumnos = new ArrayList<>();
+	
+	@ManyToMany
+	@JoinTable(
+		name = "CLASE_PROFESOR",
+		joinColumns = @JoinColumn(name = "NUM_CLASE"),
+		inverseJoinColumns = @JoinColumn(name = "ID_PROFESOR"))
+	@Builder.Default
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	private List<Profesor> profesores = new ArrayList<>();
+	
+	
 }

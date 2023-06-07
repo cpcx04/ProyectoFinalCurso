@@ -50,15 +50,14 @@ public class Alumno {
 	@Column(name="ALERGIAS")
 	private String alergias;
 	
+	@ManyToOne
+	@JoinColumn(name = "TUTOR_LEGAL", foreignKey = @ForeignKey(name="fk_alumno_tutor_legal"))
+	private Familia tutor_legal;
 	
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name="fk_alumno_clase"))	
 	private Clase clase;
-	
-	/*
-	 * MÉTODOS HELPER PARA LA ASOCIACIÓN CON CURSO
-	 */
 	
 	public void addToClase(Clase clase) {
 		this.clase = clase;

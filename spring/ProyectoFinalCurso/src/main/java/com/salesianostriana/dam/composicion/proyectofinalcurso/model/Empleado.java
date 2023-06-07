@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,6 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Inheritance(strategy= InheritanceType.JOINED)
 @Table(name="empleado")
 public class Empleado {
 	
@@ -40,10 +43,10 @@ public class Empleado {
 	@Column(name="MAIL")
 	private String mail;
 
-	@Column(name="FECHA_CONTRATACION")
+	@Column(name="FECHACONTRATACION")
 	private String fechaContratacion;
 	
-	@Column(name="FECHA_DE_DESPIDO")
+	@Column(name="FECHADESPIDO")
 	private String fechaDespido;
 	
 	
