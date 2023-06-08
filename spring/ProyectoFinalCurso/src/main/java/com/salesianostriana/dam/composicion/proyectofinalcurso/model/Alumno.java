@@ -31,12 +31,12 @@ public class Alumno {
 	@Column(name="NUM_CLASE")
 	private int num_clase;
 	
-	
 	@Column(name="CUOTA")
 	private double cuota;
 	
-	@Column(name="ID_DIETA")
-	private int id_dieta;
+	@ManyToOne
+	@JoinColumn(name = "ID_DIETA", foreignKey = @ForeignKey(name="fk_alumno_menu"))
+	private Menu id_dieta;
 	
 	@Column(name="NOMBRE")
 	private String nombre;
@@ -53,7 +53,6 @@ public class Alumno {
 	@ManyToOne
 	@JoinColumn(name = "TUTOR_LEGAL", foreignKey = @ForeignKey(name="fk_alumno_tutor_legal"))
 	private Familia tutor_legal;
-	
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name="fk_alumno_clase"))	
