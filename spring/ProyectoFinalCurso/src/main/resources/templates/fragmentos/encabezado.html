@@ -24,12 +24,9 @@
 							<a class="nav-link fuenteBlanca" th:href="@{/sobrenosotros}">Sobre nosotros</a>
 						</li>
 						<li class="nav-item">
-
-
-
 							<a class="nav-link fuenteBlanca" th:href="@{/login}">
-								<span sec:authorize="isAuthenticated()">Sign Out</span>
-								<span sec:authorize="!isAuthenticated()">Login</span>
+								<span th:href="@{/logout}" sec:authorize="isAuthenticated()">Log Out</span>
+								<span sec:authorize="!isAuthenticated()">Log in</span>
 							</a>
 						</li>
 						<li class="nav-item dropdown">

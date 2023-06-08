@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-public class SecurityConfig {
+public class SecurityConfig{
 
 	private final UserDetailsService userDetailsService;
 	private final PasswordEncoder passwordEncoder;
@@ -50,14 +50,22 @@ public class SecurityConfig {
 				.and()
 				.formLogin()
 				.loginPage("/login")
-				.permitAll();
+				.permitAll()
+				.and()
+				.logout()
+				.logoutUrl("/logout")
+				.logoutSuccessUrl("/index")
+				.invalidateHttpSession(true)
+				.and()
+				.csrf()
+				.ignoringRequestMatchers("/h2-console");
 
-		http.csrf().disable();
+		http.csrf().disable().headers().frameOptions().disable();
 
 		http.headers().frameOptions().disable();
 
 		return http.build();
 
 	}
-
+	
 }
