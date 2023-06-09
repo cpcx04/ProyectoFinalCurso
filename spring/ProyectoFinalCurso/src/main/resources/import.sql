@@ -31,17 +31,17 @@ insert into Menu (id , platoPrincipal, segundoPlato) values (30, 'Puré de pollo
 /*Empleados Antiguos y Recientes*/
 
 INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Juan', 'Perez', '12345678A', 2000, 'juan.perez@gmail.com', '2020-01-01', NULL);
-INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Maria', 'Garcia', '87654321B', 2500, 'maria.garcia@hotmail.com', '2019-03-15', '2021-06-01');
-INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Carlos', 'Rodriguez', '56789012C', 1800, 'carlos.rodriguez@yahoo.com', '2021-02-12', NULL);
-INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Ana', 'Fernandez', '34567890D', 2200, 'ana.fernandez@outlook.com', '2018-07-10', '2022-01-31');
+INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Maria', 'Garcia', '87654321B', 2100, 'maria.garcia@gmail.com', '2019-03-15', '2021-06-01');
+INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Carlos', 'Rodriguez', '56789012C', 1800, 'carlos.rodriguez@gmail.com', '2021-02-12', NULL);
+INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Ana', 'Fernandez', '34567890D', 2200, 'ana.fernandez@gmail.com', '2018-07-10', '2022-01-31');
 INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Luis', 'Sanchez', '90123456E', 1900, 'luis.sanchez@gmail.com', '2022-05-20', NULL);
-INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Alberto', 'Gonzalez', '23456789F', 2200, 'alberto.gonzalez@gmail.com', '2019-06-01', NULL);
+INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Alberto', 'Gonzalez', '23456789F', 2100, 'alberto.gonzalez@gmail.com', '2019-06-01', NULL);
 INSERT INTO profesor (id_empleado, plusSueldo) VALUES (6, 500);
-INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Laura', 'Fernandez', '98765432G', 2400, 'laura.fernandez@hotmail.com', '2020-09-15', '2023-05-31');
+INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Laura', 'Fernandez', '98765432G', 2100, 'laura.fernandez@gmail.com', '2020-09-15', '2023-05-31');
 INSERT INTO profesor (id_empleado, plusSueldo) VALUES (7, 800);
-INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Carmen', 'Martinez', '45678901H', 3000, 'carmen.martinez@yahoo.com', '2018-03-01', NULL);
+INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('Carmen', 'Martinez', '45678901H', 2000, 'carmen.martinez@gmail.com', '2018-03-01', NULL);
 INSERT INTO directora (id_empleado, horarioConsulta) VALUES (8, 'Lunes a Viernes de 9:00 a 13:00');
-INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('David', 'Garcia', '89012345I', 3200, 'david.garcia@gmail.com', '2017-01-15', '2023-06-01');
+INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('David', 'Garcia', '89012345I', 2200, 'david.garcia@gmail.com', '2017-01-15', '2023-06-01');
 INSERT INTO directora (id_empleado, horarioConsulta) VALUES (9, 'Martes y Jueves de 16:00 a 18:00');
 --Los semestres se organizan por fechas actuales,a los tres meses se cambia el semestre es decir 30/03/2023
 insert into Clase (num_clase, semestre) values (1, '30/03/2023');

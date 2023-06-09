@@ -27,7 +27,7 @@ public class ClaseService {
 	}
 	
 	public Clase delete(Clase clasee) {
-		Clase result = findById(clasee.getNum_clase());
+		Clase result = findById(clasee.getNumClase());
 		clase.delete(result);
 		return result;
 	}

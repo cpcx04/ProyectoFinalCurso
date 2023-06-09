@@ -32,7 +32,7 @@ public class Clase {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="NUM_CLASE")
-	private long num_clase;
+	private long numClase;
 	@Column(name="SEMESTRE")
 	private String semestre;
 	

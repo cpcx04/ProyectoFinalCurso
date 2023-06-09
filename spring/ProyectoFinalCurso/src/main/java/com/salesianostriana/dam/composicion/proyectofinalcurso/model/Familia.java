@@ -23,11 +23,11 @@ public class Familia {
 	private Long id;
 
 	@Column(name="TUTORLEGAL")
-	private String tutor_legal;
+	private String tutorLegal;
 
 	@ManyToOne
 	@JoinColumn(name = "ALUMNO", foreignKey = @ForeignKey(name="fk_familia_alumno"))
-	private Alumno id_alumno;
+	private Alumno idAlumno;
 	
 
 }

@@ -26,17 +26,17 @@ public class Alumno {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_alumno")
-	private Long id_alumno;
+	private Long idAlumno;
 	
 	@Column(name="NUM_CLASE")
-	private int num_clase;
+	private int numClase;
 	
 	@Column(name="CUOTA")
 	private double cuota;
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_DIETA", foreignKey = @ForeignKey(name="fk_alumno_menu"))
-	private Menu id_dieta;
+	@JoinColumn(name = "IDDIETA", foreignKey = @ForeignKey(name="fk_alumno_menu"))
+	private Menu idDieta;
 	
 	@Column(name="NOMBRE")
 	private String nombre;
@@ -52,7 +52,7 @@ public class Alumno {
 	
 	@ManyToOne
 	@JoinColumn(name = "TUTOR_LEGAL", foreignKey = @ForeignKey(name="fk_alumno_tutor_legal"))
-	private Familia tutor_legal;
+	private Familia tutorLegal;
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name="fk_alumno_clase"))	

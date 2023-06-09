@@ -34,7 +34,7 @@ public class AlumnoService extends BaseServiceImp<Alumno, Long, AlumnoRepository
     }
 
     public void delete(Alumno t) {
-        Optional<Alumno> result = findById(t.getId_alumno());
+        Optional<Alumno> result = findById(t.getIdAlumno());
         result.ifPresent(trabajador -> alumno.delete(trabajador));
     }
 }

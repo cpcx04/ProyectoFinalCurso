@@ -24,7 +24,7 @@ public class Menu{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
-	private Long id_dieta;
+	private Long idDieta;
 	
 	@Column(name="PLATOPRINCIPAL")
 	private String platoPrincipal;
@@ -32,7 +32,7 @@ public class Menu{
 	@Column(name="SEGUNDOPLATO")
 	private String segundoPlato;
 	
-	@OneToMany(mappedBy = "id_dieta")
+	@OneToMany(mappedBy = "idDieta")
 	private List<Alumno> alumnos;
 	
 	public Menu() {
@@ -40,11 +40,11 @@ public class Menu{
 	}
 	
 	public Long getId_dieta() {
-		return id_dieta;
+		return idDieta;
 	}
 
 	public void setId_dieta(Long id_dieta) {
-		this.id_dieta = id_dieta;
+		this.idDieta = id_dieta;
 	}
 
 	public String getPlatoPrincipal() {

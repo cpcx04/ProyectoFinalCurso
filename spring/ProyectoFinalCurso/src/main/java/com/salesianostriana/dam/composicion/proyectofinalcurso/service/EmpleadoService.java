@@ -34,7 +34,7 @@ public class EmpleadoService extends BaseServiceImp<Empleado, Long, EmpleadoRepo
     }
 
     public void delete(Empleado t) {
-        Optional<Empleado> result = findById(t.getId_empleado());
+        Optional<Empleado> result = findById(t.getIdEmpleado());
         result.ifPresent(trabajador -> repositorio.delete(trabajador));
     }
 	
