@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Empleado;
+import com.salesianostriana.dam.composicion.proyectofinalcurso.service.DirectoraService;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.EmpleadoService;
+import com.salesianostriana.dam.composicion.proyectofinalcurso.service.ProfesorService;
 
 @Controller
 @RequestMapping("/admin/empleados")
@@ -21,11 +23,17 @@ public class EmpleadoController {
 
 	@Autowired
 	private EmpleadoService employeeService;
+	@Autowired
+	private ProfesorService profesorService;
+	@Autowired
+	private DirectoraService directoraService;
 
 
 	@GetMapping("/")
 	public String admin(@RequestParam(name="ID_EMPLEADO",required=false)Long id,Model model) {
 		model.addAttribute("empleado",employeeService.findAll());
+		model.addAttribute("profesor",profesorService.findAll());
+		model.addAttribute("directora",directoraService.findAll());
 		return "admin";
 	}
 	@GetMapping("/nuevo")
