@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Alumno;
-import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Empleado;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.AlumnoService;
 
 @Controller
@@ -24,9 +24,10 @@ public class AlumnoController {
 	private AlumnoService alumnoService;
 	
 	@GetMapping("/")
-	public String adminAlumno(@RequestParam(name="ID_ALUMNO",required=false)Long id,Model model) {
-		model.addAttribute("alumno",alumnoService.findAll());
-		return"alumno";
+	public String adminAlumno(@RequestParam(name="IDALUMNO", required=false) Long id, Model model) {
+	    List<Alumno> alumno = alumnoService.findAllOrderByNumClase();
+	    model.addAttribute("alumno", alumno);
+	    return "alumno";
 	}
 	
 	@GetMapping("/nuevo")
@@ -41,8 +42,8 @@ public class AlumnoController {
 		return"redirect:/admin/alumno/";
 	}
 	
-	@GetMapping("/delete/{id_alumno}")
-	public String delete(@PathVariable("id_alumno")Long id,Model model) {
+	@GetMapping("/delete/{idAlumno}")
+	public String delete(@PathVariable("idAlumno")Long id,Model model) {
 		Optional<Alumno> alumno = alumnoService.findById(id);
 		Alumno alumnado=alumno.get();
 		if(alumno.isPresent()) {
@@ -51,8 +52,8 @@ public class AlumnoController {
 		return "redirect:/admin/alumno/";
 	}
 	
-	@GetMapping("edit/{id_alumno}")
-	public String editarAlumno(@PathVariable("id_alumno") Long id, Model model) {
+	@GetMapping("edit/{idAlumno}")
+	public String editarAlumno(@PathVariable("idAlumno") Long id, Model model) {
 		Optional<Alumno> alumno = alumnoService.findById(id);
 		Alumno alumnado = alumno.get();
 		if(alumno.isPresent()) {

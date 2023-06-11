@@ -22,30 +22,28 @@
 					<table class="table table-striped table-hover">
 						<thead>
 							<tr>
-								<th>Localizador</th>
 								<th>Nombre</th>
 								<th>Apellidos</th>
 								<th>Número de Clase</th>
 								<th>Cuota</th>
 								<th>Dieta</th>
 								<th>Alergias</th>
-								<th>Acciones</th>
+								<th>Tutor Legal</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr th:each="alumno : ${alumno}">
-								<td th:text="${alumno.id_alumno}"></td>
 								<td th:text="${alumno.nombre}"></td>
 								<td th:text="${alumno.apellido} + ' ' + ${alumno.apellido2}"></td>
-								<td th:text="${alumno.num_clase}"></td>
+								<th th:text="${alumno.numClase}"></th>
 								<td th:text="${alumno.cuota} + ' €'"></td>
-								<td th:text="${alumno.id_dieta}"></td>
+								<td th:text="${alumno.idDieta}"></td>
 								<td th:text="${alumno.alergias}"></td>
-
-								<td>
-									<a th:href="@{/admin/alumno/edit/{id_alumno}(id_alumno=${alumno.id_alumno})}"
+								<td th:text="${alumno.tutorLegal != null ? alumno.tutorLegal.tutorLegal : ''}"></td>
+								<td> 
+									<a th:href="@{/admin/alumno/edit/{idAlumno}(idAlumno=${alumno.idAlumno})}"
 										class="btn btn-warning">Editar</a>
-									<a th:href="@{/admin/alumno/delete/{id_alumno}(id_alumno=${alumno.id_alumno})}"
+									<a th:href="@{/admin/alumno/delete/{idAlumno}(idAlumno=${alumno.idAlumno})}"
 										class="btn btn-danger">Borrar</a>
 								</td>
 							</tr>
@@ -58,7 +56,7 @@
 	<footer th:replace="~{/fragmentos/footer::footer}"></footer>
 	<th:block th:replace=~{/fragmentos/jsfinal::javascriptfinal}></th:block>
 	<script th:src="@{/scrip/proyecto.js}"></script>
-	
+
 
 </body>
 

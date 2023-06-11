@@ -31,7 +31,7 @@ public class Clase {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="NUM_CLASE")
+	@Column(name="NUMCLASE")
 	private long numClase;
 	@Column(name="SEMESTRE")
 	private String semestre;

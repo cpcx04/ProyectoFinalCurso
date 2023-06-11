@@ -12,29 +12,43 @@ import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Empleado;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.repository.AlumnoRepository;
 
 @Service
-public class AlumnoService extends BaseServiceImp<Alumno, Long, AlumnoRepository>{
+public class AlumnoService extends BaseServiceImp<Alumno, Long, AlumnoRepository> {
 
 	@Autowired
-	private AlumnoRepository alumno;
-	
-    public List<Alumno> findAll() {
-        return alumno.findAll();
-    }
-    
-    public Alumno save(Alumno child) {
-        return alumno.save(child);
-    }
-    
-    public Alumno edit(Alumno child) {
-    	return alumno.save(child);
-    }
+	private AlumnoRepository alumnoRepo;
 
-    public Optional<Alumno> findById(Long id) {
-        return alumno.findById(id);
-    }
+	public List<Alumno> findAllOrderByNumClase() {
+		return alumnoRepo.findAllOrderByNumClase();
+	}
 
-    public void delete(Alumno t) {
-        Optional<Alumno> result = findById(t.getIdAlumno());
-        result.ifPresent(trabajador -> alumno.delete(trabajador));
-    }
+	public List<Alumno> applyDiscount() {
+		List<Alumno> alumnosWithDiscount = alumnoRepo.findAlumnosWithDiscount();
+		for (Alumno alumno : alumnosWithDiscount) {
+			Alumno child = alumno;
+			alumno.setCuota(alumno.getCuota() - 150);
+			alumnoRepo.save(child);
+		}
+		return alumnoRepo.findAlumnosWithDiscount();
+	}
+
+	public List<Alumno> findAll() {
+		return alumnoRepo.findAll();
+	}
+
+	public Alumno save(Alumno child) {
+		return alumnoRepo.save(child);
+	}
+
+	public Alumno edit(Alumno child) {
+		return alumnoRepo.save(child);
+	}
+
+	public Optional<Alumno> findById(Long id) {
+		return alumnoRepo.findById(id);
+	}
+
+	public void delete(Alumno t) {
+		Optional<Alumno> result = findById(t.getIdAlumno());
+		result.ifPresent(trabajador -> alumnoRepo.delete(trabajador));
+	}
 }
