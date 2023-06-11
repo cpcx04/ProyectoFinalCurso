@@ -17,7 +17,7 @@ public class ProfesorService extends BaseServiceImp<Profesor, Long, ProfesorRepo
 
 	@Override
 	public void delete(Profesor t) {
-		Optional<Profesor> result = findById(t.getIdEmpleado());
+		Optional<Profesor> result = findById(t.getId_empleado());
 		result.ifPresent(trabajador -> repositorio.delete(trabajador));
 		super.delete(t);
 	}

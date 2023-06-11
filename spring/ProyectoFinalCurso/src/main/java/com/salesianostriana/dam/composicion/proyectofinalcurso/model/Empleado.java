@@ -1,6 +1,8 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.model;
 
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +28,7 @@ public class Empleado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_EMPLEADO")
-	private Long idEmpleado;
+	private Long id_empleado;
 	
 	@Column(name="NOMBRE")
 	private String nombre;
@@ -44,10 +46,10 @@ public class Empleado {
 	private String mail;
 
 	@Column(name="FECHACONTRATACION")
-	private String fechaContratacion;
+	private LocalDate fechaContratacion;
 	
 	@Column(name="FECHADESPIDO")
-	private String fechaDespido;
+	private LocalDate fechaDespido;
 	
 	
 

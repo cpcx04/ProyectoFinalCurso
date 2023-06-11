@@ -16,7 +16,7 @@ public class DirectoraService extends BaseServiceImp<Directora,Long,DirectoraRep
 
 	    @Override
 	    public void delete(Directora t) {
-	        Optional<Directora> result = findById(t.getIdEmpleado());
+	        Optional<Directora> result = findById(t.getId_empleado());
 	        result.ifPresent(trabajador -> repositorio.delete(trabajador));
 	        super.delete(t);
 	    }

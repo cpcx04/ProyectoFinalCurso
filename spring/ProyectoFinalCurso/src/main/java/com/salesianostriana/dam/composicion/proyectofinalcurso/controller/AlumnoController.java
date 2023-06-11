@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Alumno;
-import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Empleado;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.AlumnoService;
 
 @Controller
