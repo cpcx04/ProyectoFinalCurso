@@ -39,7 +39,7 @@
 								<td th:text="${alumno.cuota} + ' €'"></td>
 								<td th:text="${alumno.idDieta}"></td>
 								<td th:text="${alumno.alergias}"></td>
-								<td th:text="${alumno.tutorLegal != null ? alumno.tutorLegal.tutorLegal : ''}"></td>
+								<td th:text="${alumno.tutorLegal}"></td>
 								<td> 
 									<a th:href="@{/admin/alumno/edit/{idAlumno}(idAlumno=${alumno.idAlumno})}"
 										class="btn btn-warning">Editar</a>
