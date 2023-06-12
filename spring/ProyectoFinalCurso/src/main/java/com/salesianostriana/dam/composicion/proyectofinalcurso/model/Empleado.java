@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Inheritance(strategy= InheritanceType.JOINED)
-@Table(name="empleado")
+@Table(name="EMPLEADO")
 public class Empleado {
 	
 	@Id
@@ -47,7 +47,7 @@ public class Empleado {
 
 	@Column(name="FECHACONTRATACION")
 	private LocalDate fechaContratacion;
-	
+
 	@Column(name="FECHADESPIDO")
 	private LocalDate fechaDespido;
 	

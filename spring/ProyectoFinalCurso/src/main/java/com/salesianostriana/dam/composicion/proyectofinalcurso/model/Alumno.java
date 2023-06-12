@@ -1,6 +1,5 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.model;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -20,51 +19,51 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="alumno")
+@Table(name = "alumno")
 public class Alumno {
 
-	 @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    @Column(name="IDALUMNO")
-	    private Long idAlumno;
-	    
-	    @Column(name="NUMCLASE")
-	    private int numClase;
-	    
-	    @Column(name="CUOTA")
-	    private double cuota;
-	    
-	    @ManyToOne
-	    @JoinColumn(name = "IDDIETA", foreignKey = @ForeignKey(name="fk_alumno_menu"))
-	    private Menu idDieta;
-	    
-	    @Column(name="NOMBRE")
-	    private String nombre;
-	    
-	    @Column(name="APELLIDO1")
-	    private String apellido;
-	    
-	    @Column(name="APELLIDO2")
-	    private String apellido2;
-	    
-	    @Column(name="ALERGIAS")
-	    private String alergias;
-	    
-	    @ManyToOne
-	    @JoinColumn(name = "TUTORLEGAL", referencedColumnName = "TUTORLEGAL", foreignKey = @ForeignKey(name="fk_alumno_familia"))
-	    private Familia tutorLegal;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "IDALUMNO")
+	private Long idAlumno;
 
-	    @ManyToOne
-	    @JoinColumn(foreignKey = @ForeignKey(name="fk_alumno_clase")) 
-	    private Clase clase;
-	
+	@Column(name = "NUMCLASE")
+	private int numClase;
+
+	@Column(name = "CUOTA")
+	private double cuota;
+
+	@ManyToOne
+	@JoinColumn(name = "IDDIETA", foreignKey = @ForeignKey(name = "fk_alumno_menu"))
+	private Menu idDieta;
+
+	@Column(name = "NOMBRE")
+	private String nombre;
+
+	@Column(name = "APELLIDO1")
+	private String apellido;
+
+	@Column(name = "APELLIDO2")
+	private String apellido2;
+
+	@Column(name = "ALERGIAS")
+	private String alergias;
+
+	@ManyToOne
+	@JoinColumn(name = "TUTORLEGAL", foreignKey = @ForeignKey(name = "fk_alumno_familia"))
+	private Familia tutorLegal;
+
+	@ManyToOne
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_alumno_clase"))
+	private Clase clase;
+
 	public void addToClase(Clase clase) {
 		this.clase = clase;
 		clase.getAlumnos().add(this);
 	}
-	
+
 	public void removeFromClase(Clase clase) {
 		clase.getAlumnos().remove(this);
-		this.clase = null;		
+		this.clase = null;
 	}
 }
