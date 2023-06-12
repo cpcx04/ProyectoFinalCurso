@@ -37,7 +37,7 @@
 								<td th:text="${alumno.apellido} + ' ' + ${alumno.apellido2}"></td>
 								<th th:text="${alumno.numClase}"></th>
 								<td th:text="${alumno.cuota} + ' €'"></td>
-								<td th:text="${alumno.idDieta}"></td>
+								<td th:text="${alumno.idDieta?.idMenu}"></td>
 								<td th:text="${alumno.alergias}"></td>
 								<td th:text="${alumno.tutorLegal}"></td>
 								<td> 

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Alumno;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.AlumnoService;
-import com.salesianostriana.dam.composicion.proyectofinalcurso.service.FamiliaService;
 
 @Controller
 @RequestMapping("/admin/alumno")
@@ -24,15 +23,12 @@ public class AlumnoController {
 	@Autowired
 	private AlumnoService alumnoService;
 
-	@Autowired
-	private FamiliaService familyService;
 
 	@GetMapping("/")
 	public String adminAlumno(@RequestParam(name = "IDALUMNO", required = false) Long id, Model model) {
-		List<Alumno> alumno = alumnoService.findAllOrderByNumClase();
-		model.addAttribute("alumno", alumno);
-		model.addAttribute("tutorLegal", familyService.findAll());
-		return "alumno";
+	    List<Alumno> alumno = alumnoService.findAllOrderByNumClase();
+	    model.addAttribute("alumno", alumno);
+	    return "alumno";
 	}
 
 	@GetMapping("/nuevo")
