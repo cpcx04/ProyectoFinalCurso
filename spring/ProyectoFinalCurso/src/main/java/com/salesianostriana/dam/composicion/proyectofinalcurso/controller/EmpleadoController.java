@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Directora;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Empleado;
+import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Profesor;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.DirectoraService;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.EmpleadoService;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.ProfesorService;
@@ -28,14 +30,14 @@ public class EmpleadoController {
 	@Autowired
 	private DirectoraService directoraService;
 
-
 	@GetMapping("/")
-	public String admin(@RequestParam(name="ID_EMPLEADO",required=false)Long id,Model model) {
-		model.addAttribute("empleado",employeeService.findAll());
-		model.addAttribute("profesor",profesorService.findAll());
-		model.addAttribute("directora",directoraService.findAll());
+	public String admin(@RequestParam(name = "ID_EMPLEADO", required = false) Long id, Model model) {
+		model.addAttribute("empleado", employeeService.findAll());
+		model.addAttribute("profesor", profesorService.findAll());
+		model.addAttribute("directora", directoraService.findAll());
 		return "admin";
 	}
+
 	@GetMapping("/nuevo")
 	public String nuevoTrabajador(Model model) {
 		model.addAttribute("empleado", new Empleado());
@@ -43,7 +45,7 @@ public class EmpleadoController {
 	}
 
 	@PostMapping("/nuevo/submit")
-	public String submitNuevoTrabajador(@ModelAttribute("empleado")Empleado empleado, Model model) {
+	public String submitNuevoTrabajador(@ModelAttribute("empleado") Empleado empleado, Model model) {
 		employeeService.save(empleado);
 		return "redirect:/admin/empleados/";
 	}
@@ -62,20 +64,26 @@ public class EmpleadoController {
 	@GetMapping("/edit/{ID_EMPLEADO}")
 	public String editarTrabajador(@PathVariable("ID_EMPLEADO") Long id, Model model) {
 		Optional<Empleado> empleado = employeeService.findById(id);
-		Empleado empleador = empleado.get();
-		if(empleado.isPresent()) {
-			model.addAttribute("empleado", empleador);
+		if (empleado.isPresent()) {
+			Empleado empleador = empleado.get();
+			if (empleador instanceof Directora) {
+				model.addAttribute("empleado", (Directora) empleador);
+			} else if (empleador instanceof Profesor) {
+				model.addAttribute("empleado", (Profesor) empleador);
+			} else {
+				model.addAttribute("empleado", empleador);
+			}
 			return "newWorker";
-		}else{
+		} else {
 			return "redirect:/admin/empleados/";
 		}
 	}
-	
+
 	@PostMapping("/edit/submit")
-	public String editSumbit(@ModelAttribute("empleado")Empleado empleado, Model model) {
+	public String editSumbit(@ModelAttribute("empleado") Empleado empleado, Model model) {
 		employeeService.edit(empleado);
-		
+
 		return "redirect:/admin/empleados/";
 	}
-		
+
 }
