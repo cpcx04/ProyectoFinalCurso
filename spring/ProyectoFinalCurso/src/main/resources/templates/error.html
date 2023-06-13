@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head th:replace="~{/fragmentos/head::head}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/proyecto.css}">
+</head>
+
+<body>
+    <div th:replace="~{/fragmentos/preloader::preloader}"></div>
+    <nav th:replace="~{/fragmentos/encabezado::encabezado}"></nav>
+    <main>
+        <div class="fonditoPng" style="background-image: url(/img/watercolor-sublimation-background-free-png.webp);">
+			<div class="textoAboutUs">
+				<p></p>
+
+				<h2 class="warning"><strong>Ooops!Something goes wrong</strong></h2>
+
+			</div>
+		</div>
+    </main>
+    <footer th:replace="~{/fragmentos/footer::footer}"></footer>
+    <th:block th:replace=~{/fragmentos/jsfinal::javascriptfinal}></th:block>
+    <script th:src="@{/scrip/proyecto.js}"></script>
+</body>
