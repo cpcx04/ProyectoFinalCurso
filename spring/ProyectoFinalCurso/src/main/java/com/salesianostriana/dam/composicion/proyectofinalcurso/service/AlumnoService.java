@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.baseservice.BaseServiceImp;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Alumno;
-import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Empleado;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.repository.AlumnoRepository;
 
 @Service

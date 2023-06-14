@@ -2,6 +2,8 @@ package com.salesianostriana.dam.composicion.proyectofinalcurso.baseservice;
 import java.util.List;
 import java.util.Optional;
 
+import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Alumno;
+
 public interface BaseService <T, ID>{
 
     List<T> findAll();
@@ -15,4 +17,5 @@ public interface BaseService <T, ID>{
     void delete(T t);
 
     void deleteById(ID id);
+
 }

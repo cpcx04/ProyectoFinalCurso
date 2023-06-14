@@ -14,56 +14,56 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Table(name = "alumno")
 public class Alumno {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "IDALUMNO")
-	private Long idAlumno;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "IDALUMNO")
+    private Long idAlumno;
 
-	@Column(name = "NUMCLASE")
-	private int numClase;
+    @Column(name = "NUMCLASE")
+    private int numClase;
 
-	@Column(name = "CUOTA")
-	private double cuota;
+    @Column(name = "CUOTA")
+    private double cuota;
 
-	@ManyToOne
-	@JoinColumn(name = "IDDIETA", foreignKey = @ForeignKey(name = "fk_alumno_menu"))
-	private Menu idDieta;
+    @ManyToOne
+    @JoinColumn(name = "IDDIETA", foreignKey = @ForeignKey(name = "fk_alumno_menu"))
+    private Menu idDieta;
 
-	@Column(name = "NOMBRE")
-	private String nombre;
+    @Column(name = "NOMBRE")
+    private String nombre;
 
-	@Column(name = "APELLIDO1")
-	private String apellido;
+    @Column(name = "APELLIDO1")
+    private String apellido;
 
-	@Column(name = "APELLIDO2")
-	private String apellido2;
+    @Column(name = "APELLIDO2")
+    private String apellido2;
 
-	@Column(name = "ALERGIAS")
-	private String alergias;
+    @Column(name = "ALERGIAS")
+    private String alergias;
 
-	@ManyToOne
-	@JoinColumn(name = "TUTORLEGAL", foreignKey = @ForeignKey(name = "fk_alumno_familia"))
-	private Familia tutorLegal;
+    @ManyToOne
+    @JoinColumn(foreignKey = @ForeignKey(name = "fk_alumno_clase"))
+    private Clase clase;
 
-	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name = "fk_alumno_clase"))
-	private Clase clase;
+    @ManyToOne
+    @JoinColumn(name = "TUTORLEGAL", foreignKey = @ForeignKey(name = "fk_alumno_familia"))
+    private Familia tutorLegal;
+    
+    public void addToClase(Clase clase) {
+        this.clase = clase;
+        clase.getAlumnos().add(this);
+    }
 
-	public void addToClase(Clase clase) {
-		this.clase = clase;
-		clase.getAlumnos().add(this);
-	}
-
-	public void removeFromClase(Clase clase) {
-		clase.getAlumnos().remove(this);
-		this.clase = null;
-	}
+    public void removeFromClase(Clase clase) {
+        clase.getAlumnos().remove(this);
+        this.clase = null;
+    }
 }

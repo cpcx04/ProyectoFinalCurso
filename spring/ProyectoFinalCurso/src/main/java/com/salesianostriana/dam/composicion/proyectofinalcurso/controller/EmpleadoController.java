@@ -80,9 +80,14 @@ public class EmpleadoController {
 	}
 
 	@PostMapping("/edit/submit")
-	public String editSumbit(@ModelAttribute("empleado") Empleado empleado, Model model) {
-		employeeService.edit(empleado);
-
+	public String editSubmit(@ModelAttribute("empleado") Empleado empleado, Model model) {
+		if (empleado instanceof Directora) {
+			directoraService.edit((Directora) empleado);
+		} else if (empleado instanceof Profesor) {
+			profesorService.edit((Profesor) empleado);
+		} else {
+			employeeService.edit(empleado);
+		}
 		return "redirect:/admin/empleados/";
 	}
 
