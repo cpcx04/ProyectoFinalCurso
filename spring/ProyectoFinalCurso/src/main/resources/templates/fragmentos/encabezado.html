@@ -25,7 +25,7 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link fuenteBlanca" th:href="@{/login}">
-								<span sec:authorize="!isAuthenticated()">Sign in</span>
+								<span sec:authorize="!isAuthenticated()"><!--Dejar igual que el logOut-->Sign in</span>
 								<span sec:authorize="isAuthenticated()">
 									<form th:action="@{/logout}" method="POST" id="logoutForm" style="display: none;"></form>
 									<a class="fuenteBlanca nav-link"
