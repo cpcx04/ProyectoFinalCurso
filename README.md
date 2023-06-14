@@ -9,8 +9,8 @@
 -->BDD Y PROGRAMACION
 --->Logica de Negocio
 Empleados-->+1 año en la empresa +250e 
-Alumnos
-TutorLegal 'Hermano+18'-->-150e de descuento en matricula
+Alumnos-->
+TutorLegal== 'Hermano+18'-->-150e de descuento en matricula
 -->+1 hermano en la guarderia -->-100e matriculacion
 -->A mas meses de Servicio mayor descuento.
 
