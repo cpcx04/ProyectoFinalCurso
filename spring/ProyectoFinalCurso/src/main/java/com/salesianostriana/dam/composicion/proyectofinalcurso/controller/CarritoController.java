@@ -52,7 +52,6 @@ public class CarritoController {
 
 	@GetMapping("/borrarEmpresa/{id}")
 	public String removeProductFromCart(@PathVariable("id") Long id) {
-
 		carro.removeProducto(empresas.findById(id));
 		return "redirect:/admin/servicios/carrito";
 	}
@@ -71,4 +70,13 @@ public class CarritoController {
 
 		return 0.0;
 	}
+	
+	@GetMapping("/procesarCompra")
+	public String procesarCompra(@PathVariable("id")Long id, Model model) {
+		double precioFinal=0.0;
+		precioFinal=totalCarrito();
+		return"procesarCompra";
+	}
+	
+	
 }

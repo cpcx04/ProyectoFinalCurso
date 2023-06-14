@@ -95,3 +95,29 @@ function validarLogin() {
  
 	return true; 
  }
+function validarFormularioAlumnos() {
+    var idDietaField = document.getElementById("idDieta");
+    var idDieta = parseInt(idDietaField.value);
+
+    if (idDieta <= 0 || idDieta > 100 || isNaN(idDieta)) {
+        alert("La dieta no está disponible. Por favor, elija un valor entre 1 y 100.");
+        return false;
+    }
+
+    var numClaseField = document.getElementById("numClase");
+    var numClase = parseInt(numClaseField.value);
+
+    if (numClase < 1 || numClase > 10 || isNaN(numClase)) {
+        alert("El número de clase debe estar entre 1 y 10.");
+        return false;
+    }
+
+    return true;
+}
+ function validarCantidad(event) {
+    var cantidad = parseInt(event.target.value);
+
+    if (cantidad <= 0) {
+        event.target.value = 1;
+    }
+}

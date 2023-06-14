@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.controller;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +34,23 @@ public class EmpleadoController {
 
 	@GetMapping("/")
 	public String admin(@RequestParam(name = "ID_EMPLEADO", required = false) Long id, Model model) {
-		model.addAttribute("empleado", employeeService.findAll());
-		model.addAttribute("profesor", profesorService.findAll());
-		model.addAttribute("directora", directoraService.findAll());
-		return "admin";
+	    List<Empleado> empleados = employeeService.findAll();
+
+	    for (Empleado empleado : empleados) {
+	        LocalDate fechaContratacion = empleado.getFechaContratacion();
+	        LocalDate fechaActual = LocalDate.now();
+	        if (fechaContratacion.plusYears(1).isBefore(fechaActual)) {
+	            double sueldoActualizado = empleado.getSueldo() + 150;
+	            empleado.setSueldo(sueldoActualizado);
+	            employeeService.save(empleado);
+	        }
+	    }
+
+	    model.addAttribute("empleado", employeeService.findAll());
+	    model.addAttribute("profesor", profesorService.findAll());
+	    model.addAttribute("directora", directoraService.findAll());
+	    
+	    return "admin";
 	}
 
 	@GetMapping("/nuevo")
@@ -81,14 +96,22 @@ public class EmpleadoController {
 
 	@PostMapping("/edit/submit")
 	public String editSubmit(@ModelAttribute("empleado") Empleado empleado, Model model) {
-		if (empleado instanceof Directora) {
-			directoraService.edit((Directora) empleado);
-		} else if (empleado instanceof Profesor) {
-			profesorService.edit((Profesor) empleado);
-		} else {
-			employeeService.edit(empleado);
-		}
-		return "redirect:/admin/empleados/";
+	    if (empleado instanceof Directora) {
+	        Directora original = directoraService.findById(empleado.getId_empleado()).orElse(null);
+	        if (original != null) {
+	            ((Directora) empleado).setHorarioConsulta(original.getHorarioConsulta());
+	            directoraService.edit((Directora) empleado);
+	        }
+	    } else if (empleado instanceof Profesor) {
+	        Profesor original = profesorService.findById(empleado.getId_empleado()).orElse(null);
+	        if (original != null) {
+	            ((Profesor) empleado).setPlusSueldo(original.getPlusSueldo());
+	            profesorService.edit((Profesor) empleado);
+	        }
+	    } else {
+	        employeeService.edit(empleado);
+	    }
+	    return "redirect:/admin/empleados/";
 	}
 
 }

@@ -35,7 +35,7 @@
 							<tr th:each="alumno : ${alumno}">
 								<td th:text="${alumno.nombre}"></td>
 								<td th:text="${alumno.apellido} + ' ' + ${alumno.apellido2}"></td>
-								<th th:text="${alumno.clase.numClase}"></th>
+								<th th:text="${alumno.clase.clase}"></th>
 								<td th:text="${alumno.cuota} + ' €'"></td>
 								<td th:text="${alumno.idDieta?.idMenu}"></td>
 								<td th:text="${alumno.alergias}"></td>

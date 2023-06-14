@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Table(name="DIRECTORA")
 public class Directora extends Empleado{
 
+	
 	@Column(name="HORARIOCONSULTA")
 	private String horarioConsulta;
 

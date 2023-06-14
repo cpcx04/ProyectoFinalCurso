@@ -12,6 +12,92 @@
 	<div th:replace="~{/fragmentos/preloader::preloader}"></div>
 	<nav th:replace="~{/fragmentos/encabezado::encabezado}"></nav>
 	<main>
+		<div class="container" style="margin-top: 80px;">
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Empresas disponibles:</h3>
+					<table
+						style="width: 100%; max-width: 100%; margin-bottom: 1rem; background-color: #fff; border-radius: 0.25rem; border-collapse: collapse;">
+						<thead>
+							<tr>
+								<th style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">
+									Empresa</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">
+									Limpieza Sur</td>
+							</tr>
+							<tr>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">
+									Clean4U</td>
+							</tr>
+							<tr>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">
+									Babynut</td>
+							</tr>
+							<tr>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">
+									Happymilk</td>
+							</tr>
+							<tr>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">The
+									BabyFood Co.</td>
+							</tr>
+							<tr>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">
+									MediCare</td>
+							</tr>
+							<tr>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">
+									Salud en Casa</td>
+							</tr>
+							<tr>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">
+									Clinica Dia</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-6">
+					<h3>Descuento por meses de contratación:</h3>
+					<table
+						style="width: 100%; max-width: 100%; margin-bottom: 1rem; background-color: #fff; border-radius: 0.25rem; border-collapse: collapse;">
+						<thead>
+							<tr>
+								<th
+									style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6; font-weight: bold; background-color: #f8d7da; color: #721c24; border-bottom: 2px solid #dee2e6;">
+									Meses de contratación</th>
+								<th
+									style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6; font-weight: bold; background-color: #f8d7da; color: #721c24; border-bottom: 2px solid #dee2e6;">
+									Descuento</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr style="background-color: #ffe8f5;">
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">3
+									meses</td>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">5%
+								</td>
+							</tr>
+							<tr style="background-color: #d1f1e6;">
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">6
+									meses</td>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">10%
+								</td>
+							</tr>
+							<tr style="background-color: #ffe8f5;">
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">12
+									meses</td>
+								<td style="padding: 0.75rem; vertical-align: middle; border-top: 1px solid #dee2e6;">15%
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 		<div class="container" style="margin-top:80px;">
 			<div class="row">
 				<div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -42,13 +128,10 @@
 								</td>
 								<td class="col-sm-1 col-md-1" style="text-align: center">
 									<input class="form-control" id="inputQuantity" value="3" th:value="${empresa.value}"
-										type="text" />
+										type="number" min="1" />
 								</td>
 								<td class="col-sm-1 col-md-1 text-center"><strong
 										th:text="${empresa.key.cuota}">$4.87</strong></td>
-								<!-- Como se puede ver en el manual de Th y hablamos en clase, en th se pueden hacer operaciones básicas con variables
-                        como en java, por lo que se puede multiplicar un valor por otro, como por ejemplo, aquí en precio por cantidad -->
-
 								<td class="col-sm-1 col-md-1 text-center"><strong
 										th:text="${empresa.key.cuota * empresa.value}">$14.61</strong></td>
 								<td class="col-sm-1 col-md-1">

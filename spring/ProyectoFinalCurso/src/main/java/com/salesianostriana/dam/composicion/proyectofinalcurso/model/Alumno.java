@@ -49,22 +49,22 @@ public class Alumno {
     private String alergias;
 
     @ManyToOne
-    @JoinColumn(name="NUMCLASE",foreignKey = @ForeignKey(name = "fk_alumno_clase"))
+    @JoinColumn(name="idClase",foreignKey = @ForeignKey(name = "fk_alumno_clase"))
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private Clase numClase;
+    private Clase clase;
 
     @ManyToOne
     @JoinColumn(name = "TUTORLEGAL",foreignKey = @ForeignKey(name = "fk_alumno_familia"))
     private Familia tutorLegal;
     
     public void addToClase(Clase clase) {
-        this.numClase = clase;
+        this.clase = clase;
         clase.getAlumnos().add(this);
     }
 
     public void removeFromClase(Clase clase) {
         clase.getAlumnos().remove(this);
-        this.numClase = null;
+        this.clase = null;
     }
 }
