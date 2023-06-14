@@ -12,24 +12,23 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "alumno")
+@Table(name = "ALUMNO")
 public class Alumno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IDALUMNO")
     private Long idAlumno;
-
-    @Column(name = "NUMCLASE")
-    private int numClase;
-
+    
     @Column(name = "CUOTA")
     private double cuota;
 
@@ -50,20 +49,22 @@ public class Alumno {
     private String alergias;
 
     @ManyToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "fk_alumno_clase"))
-    private Clase clase;
+    @JoinColumn(name="NUMCLASE",foreignKey = @ForeignKey(name = "fk_alumno_clase"))
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Clase numClase;
 
     @ManyToOne
-    @JoinColumn(name = "TUTORLEGAL", foreignKey = @ForeignKey(name = "fk_alumno_familia"))
+    @JoinColumn(name = "TUTORLEGAL",foreignKey = @ForeignKey(name = "fk_alumno_familia"))
     private Familia tutorLegal;
     
     public void addToClase(Clase clase) {
-        this.clase = clase;
+        this.numClase = clase;
         clase.getAlumnos().add(this);
     }
 
     public void removeFromClase(Clase clase) {
         clase.getAlumnos().remove(this);
-        this.clase = null;
+        this.numClase = null;
     }
 }

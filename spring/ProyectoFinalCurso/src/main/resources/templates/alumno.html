@@ -35,11 +35,11 @@
 							<tr th:each="alumno : ${alumno}">
 								<td th:text="${alumno.nombre}"></td>
 								<td th:text="${alumno.apellido} + ' ' + ${alumno.apellido2}"></td>
-								<th th:text="${alumno.numClase}"></th>
+								<th th:text="${alumno.clase.numClase}"></th>
 								<td th:text="${alumno.cuota} + ' €'"></td>
 								<td th:text="${alumno.idDieta?.idMenu}"></td>
 								<td th:text="${alumno.alergias}"></td>
-								<td th:text="${alumno.tutorLegal}"></td>
+								<td th:text="${alumno.familia.tutorLegal}"></td>
 								<td> 
 									<a th:href="@{/admin/alumno/edit/{idAlumno}(idAlumno=${alumno.idAlumno})}"
 										class="btn btn-warning">Editar</a>

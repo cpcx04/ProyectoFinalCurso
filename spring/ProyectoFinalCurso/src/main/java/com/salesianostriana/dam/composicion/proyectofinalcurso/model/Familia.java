@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="familia")
+@Table(name="FAMILIA")
 public class Familia {
 
     @Id

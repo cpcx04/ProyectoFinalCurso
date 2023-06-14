@@ -3,11 +3,10 @@ package com.salesianostriana.dam.composicion.proyectofinalcurso.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
@@ -26,31 +25,28 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="CLASE")
+@Table(name = "CLASE")
 public class Clase {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="NUMCLASE")
-	private long numClase;
-	@Column(name="SEMESTRE")
-	private String semestre;
+    @Id
+    @Column(name = "NUMCLASE")
+    private long numClase;
+
+    @Column(name = "SEMESTRE")
+    private String semestre;
+
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy="clase", fetch = FetchType.EAGER)
-	@Builder.Default
-	private List<Alumno> alumnos = new ArrayList<>();
+	@OneToMany(mappedBy="numClase", fetch = FetchType.EAGER,cascade=CascadeType.REMOVE)
+	private List<Alumno> alumnos;
 	
 	@ManyToMany
 	@JoinTable(
-		name = "CLASE_PROFESOR",
-		joinColumns = @JoinColumn(name = "NUM_CLASE"),
-		inverseJoinColumns = @JoinColumn(name = "ID_PROFESOR"))
-	@Builder.Default
+		name = "CLASE",
+		joinColumns = @JoinColumn(name = "NUMCLASE"),
+		inverseJoinColumns = @JoinColumn(name = "ID_EMPLEADO"))
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	private List<Profesor> profesores = new ArrayList<>();
-	
-	
+	private List<Profesor> profesores;
 }

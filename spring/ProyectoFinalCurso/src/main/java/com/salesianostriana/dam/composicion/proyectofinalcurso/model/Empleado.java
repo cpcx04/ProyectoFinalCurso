@@ -3,6 +3,8 @@ package com.salesianostriana.dam.composicion.proyectofinalcurso.model;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -46,8 +48,10 @@ public class Empleado {
 	private String mail;
 
 	@Column(name="FECHACONTRATACION")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaContratacion;
-
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name="FECHADESPIDO")
 	private LocalDate fechaDespido;
 	
