@@ -71,12 +71,6 @@ public class CarritoController {
 		return 0.0;
 	}
 	
-	@GetMapping("/procesarCompra")
-	public String procesarCompra(@PathVariable("id")Long id, Model model) {
-		double precioFinal=0.0;
-		precioFinal=totalCarrito();
-		return"procesarCompra";
-	}
 	
 	
 }

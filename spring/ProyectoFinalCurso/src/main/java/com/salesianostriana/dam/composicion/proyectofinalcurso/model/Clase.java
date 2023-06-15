@@ -18,8 +18,6 @@ import lombok.ToString;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
 @Table(name = "CLASE")
 public class Clase {
@@ -27,13 +25,13 @@ public class Clase {
     @Id
     @Column(name = "NUMCLASE")
     private long numClase;
-
+/*
     @Column(name = "SEMESTRE")
     private String semestre;
 
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy="numclase", fetch = FetchType.EAGER,cascade=CascadeType.REMOVE)
+	@OneToMany(mappedBy="alumnos", fetch = FetchType.EAGER,cascade=CascadeType.REMOVE)
 	private List<Alumno> alumnos;
-	
+*/	
 }

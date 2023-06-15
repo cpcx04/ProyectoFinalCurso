@@ -53,19 +53,15 @@ public class Alumno {
     @JoinColumn(name="FAMILIA",foreignKey = @ForeignKey(name = "fk_alumno_familia"))
     private Familia familia;
     
-    @ManyToOne
-    @JoinColumn(name="NUMCLASE",foreignKey = @ForeignKey(name = "fk_alumno_clase"))
+    /*@ManyToOne
+    @JoinColumn(name="NUMCLASE",referencedColumnName = "numClase",foreignKey = @ForeignKey(name = "fk_alumno_clase"))
     @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Clase numclase;
+    @EqualsAndHashCode.Exclude*/
+    @Column(name="NUMCLASE")
+    private int numClase;
+    
+    /*public Clase getNumClase() {
+        return this.numClase;
+    }*/
   
-    public void addToClase(Clase clase) {
-        this.numclase = clase;
-        clase.getAlumnos().add(this);
-    }
-
-    public void removeFromClase(Clase clase) {
-        clase.getAlumnos().remove(this);
-        this.numclase = null;
-    }
 }

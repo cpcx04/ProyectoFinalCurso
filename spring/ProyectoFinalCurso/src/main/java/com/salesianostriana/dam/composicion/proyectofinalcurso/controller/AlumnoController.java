@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Alumno;
+import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Familia;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.AlumnoService;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.ClaseService;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.FamiliaService;
@@ -30,9 +31,6 @@ public class AlumnoController {
 	
 	@Autowired
 	private MenuService menuService;
-	
-	@Autowired
-	private ClaseService claseService;
 
 
 	@GetMapping("/")
@@ -40,7 +38,6 @@ public class AlumnoController {
 	    
 		model.addAttribute("menu",menuService.findAll());
 		model.addAttribute("familias", familiaService.findAll());
-		model.addAttribute("clase",claseService.findAll());
 	    model.addAttribute("alumno", alumnoService.findAllOrderByNumClase());
 	    
 	    return "alumno";

@@ -11,7 +11,7 @@ import com.salesianostriana.dam.composicion.proyectofinalcurso.repository.ClaseR
 @Service
 public class ClaseService {
 	
-	@Autowired
+	/*@Autowired
 	private ClaseRepository clase;
 	
 	public List<Clase>findAll(){
@@ -36,5 +36,5 @@ public class ClaseService {
 	public Clase edit(Clase clasee) {
 		return clase.save(clasee);
 	}
-
+*/
 }

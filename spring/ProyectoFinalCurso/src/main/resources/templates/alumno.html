@@ -24,7 +24,7 @@
 							<tr>
 								<th>Nombre</th>
 								<th>Apellidos</th>
-								<th>Semestre</th>
+								<th>Numero de clase</th>
 								<th>Cuota</th>
 								<th>Alergias</th>
 								<th>Familia</th>
@@ -34,7 +34,7 @@
 							<tr th:each="alumno : ${alumno}">
 								<td th:text="${alumno.nombre}"></td>
 								<td th:text="${alumno.apellido} + ' ' + ${alumno.apellido2}"></td>
-								<th th:text="${alumno.numclase.semestre}"></th>
+								<th th:text="${alumno.numClase}"></th>
 								<td th:text="${alumno.cuota} + ' €'"></td>
 								<td th:text="${alumno.alergias}"></td>
 								<td th:text="${alumno.familia.familia}"></td>
@@ -43,7 +43,7 @@
 										class="btn btn-warning">Editar</a>
 									<a th:href="@{/admin/alumno/delete/{idAlumno}(idAlumno=${alumno.idAlumno})}"
 										class="btn btn-danger">Borrar</a>
-								</td>
+								</td> 	
 							</tr>
 						</tbody>
 					</table>

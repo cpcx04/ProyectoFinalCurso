@@ -14,8 +14,8 @@ import jakarta.transaction.Transactional;
 @Transactional
 public interface AlumnoRepository extends JpaRepository<Alumno, Long> {
     
-    @Query("SELECT a FROM Alumno a ORDER BY a.numclase")
-    List<Alumno> findAllOrderByNumClase();
+	@Query("SELECT a FROM Alumno a ORDER BY a.numClase")
+	List<Alumno> findAllOrderByNumClase();
     
     @Query("SELECT a FROM Alumno a JOIN a.familia t WHERE t.tutorLegal = 'hermano+18'")
     List<Alumno> findAlumnosWithDiscount();

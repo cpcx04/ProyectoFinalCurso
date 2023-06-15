@@ -114,10 +114,23 @@ function validarFormularioAlumnos() {
 
     return true;
 }
- function validarCantidad(event) {
-    var cantidad = parseInt(event.target.value);
 
-    if (cantidad <= 0) {
-        event.target.value = 1;
-    }
+function calcularTotal() {
+	var cantidad = document.getElementById("cantidad").getAttribute("data-cantidad");
+	var cuota = document.getElementById("cuota").getAttribute("data-cuota");
+	var total;
+
+	if (cantidad == 1) {
+		total = cuota * cantidad;
+	} else if (cantidad == 3) {
+		total = cuota - (cuota * 0.05);
+	} else if (cantidad == 6) {
+		total = cuota - (cuota * 0.1);
+	} else if (cantidad == 12) {
+		total = cuota - (cuota * 0.15);
+	} else {
+		total = cuota * cantidad;
+	}
+
+	document.getElementById("descuento").innerHTML = "<strong>" + total + "</strong>";
 }

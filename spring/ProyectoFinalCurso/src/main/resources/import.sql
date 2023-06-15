@@ -44,17 +44,6 @@ INSERT INTO directora (id_empleado, horarioConsulta) VALUES (8, 'Lunes a Viernes
 INSERT INTO empleado (nombre, apellidos, dni, sueldo, mail, fechaContratacion, fechaDespido) VALUES ('David', 'Garcia', '89012345I', 2200, 'david.garcia@gmail.com', '2017-01-15', '2023-06-01');
 INSERT INTO directora (id_empleado, horarioConsulta) VALUES (9, 'Martes y Jueves de 16:00 a 18:00');
 --Los semestres se organizan por fechas actuales,a los tres meses se cambia el semestre es decir 30/03/2023
-insert into Clase (numClase, semestre) values (1, '30/03/2023');
-insert into Clase (numClase, semestre) values (2, '30/03/2023');
-insert into Clase (numClase, semestre) values (3, '30/03/2023');
-insert into Clase (numClase, semestre) values (4, '30/03/2023');
-insert into Clase (numClase, semestre) values (5, '30/03/2023');
-insert into Clase (numClase, semestre) values (6, '30/03/2023');
-insert into Clase (numClase, semestre) values (7, '30/03/2023');
-insert into Clase (numClase, semestre) values (8, '30/03/2023');
-insert into Clase (numClase, semestre) values (9, '30/03/2023');
-insert into Clase (numClase, semestre) values (10,'30/03/2023');
-
 INSERT INTO FAMILIA (FAMILIA, MADRE, PADRE, HERMANOS, TUTORLEGAL) VALUES (1, 'mario', 'isabel', 'pedro', 'hermano+18');
 INSERT INTO ALUMNO (CUOTA, IDDIETA, NOMBRE, APELLIDO1, APELLIDO2, ALERGIAS, FAMILIA,NUMCLASE) VALUES (800, 1, 'Juan', 'Pérez', 'García', 'A los ácaros', 1,1);
 
