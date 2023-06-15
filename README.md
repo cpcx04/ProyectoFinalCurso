@@ -1,9 +1,6 @@
-/*ACTUALIZACION 12/06/2023*/
--->Solucionar
--->arreglar applyDiscount(), no sé como mostrarlo
--->Meter excepciones
-
--->A mas meses de Servicio mayor descuento.
+/*ACTUALIZACION FINAL*/
+A ultima hora empezaron a salir fallos en los editar y tuve que poner una de las clases entre comentarios ya que no he tenido manera de solucionarlo.
+Los descuentos no los he conseguido aplicar.
 
 # ProyectoFinalCurso
 <h1 align="center">-Entrega proyecto final.</h1>
