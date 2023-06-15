@@ -1,6 +1,5 @@
 package com.salesianostriana.dam.composicion.proyectofinalcurso.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.composicion.proyectofinalcurso.model.Alumno;
 import com.salesianostriana.dam.composicion.proyectofinalcurso.service.AlumnoService;
+import com.salesianostriana.dam.composicion.proyectofinalcurso.service.ClaseService;
+import com.salesianostriana.dam.composicion.proyectofinalcurso.service.FamiliaService;
+import com.salesianostriana.dam.composicion.proyectofinalcurso.service.MenuService;
 
 @Controller
 @RequestMapping("/admin/alumno")
@@ -22,12 +24,25 @@ public class AlumnoController {
 
 	@Autowired
 	private AlumnoService alumnoService;
+	
+	@Autowired
+	private FamiliaService familiaService;
+	
+	@Autowired
+	private MenuService menuService;
+	
+	@Autowired
+	private ClaseService claseService;
 
 
 	@GetMapping("/")
 	public String adminAlumno(@RequestParam(name = "IDALUMNO", required = false) Long id, Model model) {
-	    List<Alumno> alumno = alumnoService.findAllOrderByNumClase();
-	    model.addAttribute("alumno", alumno);
+	    
+		model.addAttribute("menu",menuService.findAll());
+		model.addAttribute("familias", familiaService.findAll());
+		model.addAttribute("clase",claseService.findAll());
+	    model.addAttribute("alumno", alumnoService.findAllOrderByNumClase());
+	    
 	    return "alumno";
 	}
 

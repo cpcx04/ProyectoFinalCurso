@@ -31,11 +31,9 @@ public class Clase {
     @Column(name = "SEMESTRE")
     private String semestre;
 
-	
-
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy="clase", fetch = FetchType.EAGER,cascade=CascadeType.REMOVE)
+	@OneToMany(mappedBy="numclase", fetch = FetchType.EAGER,cascade=CascadeType.REMOVE)
 	private List<Alumno> alumnos;
 	
 }

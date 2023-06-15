@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -48,23 +49,23 @@ public class Alumno {
     @Column(name = "ALERGIAS")
     private String alergias;
 
+    @OneToOne(optional=false)
+    @JoinColumn(name="FAMILIA",foreignKey = @ForeignKey(name = "fk_alumno_familia"))
+    private Familia familia;
+    
     @ManyToOne
-    @JoinColumn(name="idClase",foreignKey = @ForeignKey(name = "fk_alumno_clase"))
+    @JoinColumn(name="NUMCLASE",foreignKey = @ForeignKey(name = "fk_alumno_clase"))
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private Clase clase;
-
-    @ManyToOne
-    @JoinColumn(name = "TUTORLEGAL",foreignKey = @ForeignKey(name = "fk_alumno_familia"))
-    private Familia tutorLegal;
-    
+    private Clase numclase;
+  
     public void addToClase(Clase clase) {
-        this.clase = clase;
+        this.numclase = clase;
         clase.getAlumnos().add(this);
     }
 
     public void removeFromClase(Clase clase) {
         clase.getAlumnos().remove(this);
-        this.clase = null;
+        this.numclase = null;
     }
 }
