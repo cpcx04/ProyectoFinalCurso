@@ -1,17 +1,8 @@
 /*ACTUALIZACION 12/06/2023*/
 -->Solucionar
--->Arreglar los editars(alumno) y fechas(al editar)
 -->arreglar applyDiscount(), no sé como mostrarlo
--->No muestra los tutores legales
--->Se borra la fecha de contratacion y despido al editar
 -->Meter excepciones
 
--->BDD Y PROGRAMACION
---->Logica de Negocio
-Empleados-->+1 año en la empresa +250e 
-Alumnos-->
-TutorLegal== 'Hermano+18'-->-150e de descuento en matricula
--->+1 hermano en la guarderia -->-100e matriculacion
 -->A mas meses de Servicio mayor descuento.
 
 # ProyectoFinalCurso
